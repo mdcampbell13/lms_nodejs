@@ -1,0 +1,183 @@
+<%- include('includes/header') %>
+    <body class="bg-dark container mb-4">
+      <div class="jumbotron bg-dark text-light">
+        <h1 class="display-4">Screen Package Add-Ons</h1>
+        <p class="lead">We have a number of options available at special rates only available with our screen rental packages.</p>
+        <hr class="my-4">
+        <p>FM transmitters and receivers are available for you to have a quiet night if you are concerned about neighbors, if you have attendees with special requirements or other concerns. We also have generators available in 2000 watt and 4000 watt peak sizes.</p>
+        <p>We provide a "no touch" service with all of our equipement that might come into contact with our customers either UVC sterilized as with our FM receivers or wiped down intiseptically as with our rental equipment. We follow all CDC guidlines. The safety and wellbeing of our customers is our #1 priority.</p>
+      </div>
+      <div class="container mb-3 pb-4">
+        <!-- Bootstrap card with price listing -->
+        <div class="card text-center">
+          <div class="c-head">
+          <div class="card-header text-light"><h5>
+              Screen Package Add-Ons Price Listing</h5>
+          </div>
+          </div>
+          <div class="card-body bg-dark text-light">
+              <h5>These prices are only available as additions to screen package rentals.</h5>
+              <ul class="list-group text-muted">
+                  <li class="list-group-item d-flex list-between list-between2">
+                    <h6>FM Transmitter 150 Foot Radius</h6>
+                    <h6>$25</h6>
+                  </li>
+                  <li class="list-group-item d-flex list-between list-between2">
+                      <h6>FM Receivers</h6>
+                      <h6>25 for $25</h6>
+                    </li>
+                    <li class="list-group-item d-flex list-between list-between2">
+                      <h6>2,000 Watt Peak Portable Generator</h6>
+                      <h6>$25</h6>
+                    </li>
+                    <li class="list-group-item d-flex list-between list-between2">
+                      <h6>4,000 Watt Peak Generator</h6>
+                      <h6>$50</h6>
+                    </li>
+                </ul>
+            <p class="card-text">Rental period of this equipment is only for duration of screen rental.</p>
+            <p class="res-button">
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-lg btn-inline btn-danger mt-5" data-toggle="modal" data-target="#areservationModal">
+                Request Package Add-Ons</button>
+                <!-- Modal -->
+<div class="modal fade" id="areservationModal" tabindex="-1" role="dialog" aria-labelledby="areservationModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content text-dark text-left">
+    <div class="modal-header">
+      <h5 class="modal-title" id="areservationModal">Screen Package Add-Ons</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>
+        Please fill out the form below and we'll get back to you as soon
+        as possible
+      </p>
+      <form id="packageReservation">
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" id="paFirstName" placeholder="First name">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" id="paLastName" placeholder="Last name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="paEmail"
+            required="required"
+            placeholder="name@example.com"
+          />
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="paTel"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          required="required"
+          placeholder="502-555-5555"
+        />
+      </div>
+        <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control" id="paAddress" placeholder="1234 Main St">
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Address 2</label>
+          <input type="text" class="form-control" id="paAddress2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="paCity">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <select id="paState" class="form-control">
+              <option selected>Kentucky</option>
+              <option>Indiana</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="paZip">Zip</label>
+            <input type="text" class="form-control" id="paZip">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="servicesRequested">Rental Services Requested</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="fmTransmitterCheck1">
+            <label class="form-check-label" for="fmTransmitterCheck">
+              FM Transmitter
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="fmReceiversCheck1">
+            <label class="form-check-label" for="fmReceiversCheck">
+              FM Receivers
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="2000WattGenCheck1">
+            <label class="form-check-label" for="2000WattGenCheck">
+              2,000 Watt Peak Portable Generator
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="4000WattGenCheck1">
+            <label class="form-check-label" for="4000WattGenCheck">
+              4,000 Watt Peak Generator
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <form>
+            <label for="date">Date Reservation Requested</label><br />
+            <input
+              type="date"
+              id="paDate"
+              required="required"
+              name="date"
+            />
+          </form>
+        </div>
+        <div class="form-group">
+          <label for="prequests">Additional Requests</label>
+          <textarea
+            id="paRequests"
+            rows="3"
+            class="form-control"
+          ></textarea>
+        </div>
+        <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-danger" data-dismiss="modal" id="paRequest">Send Request</button>
+    </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+          </div>
+          </div>
+          <div class="c-foot">
+          <div class="card-footer text-light pb-4">
+            Additional Services are Available Upon Request
+          </div>
+        </div>
+        </div>
+          <hr class="my-4">
+            <p class="text-light text-center">We have numerous payment options available through PayPal. We will provide a payment link in your return email after your reservation is finalized. We can also accept traditional forms of payment such as check, cash, or money order.</p>
+            <img src="cc-badges.png" alt="PayPal" class="rounded mx-auto d-block"/>
+        </div>
+        </div>
+        <script src="js/pajssheet.js"></script>
+        <%- include('includes/footer') %>

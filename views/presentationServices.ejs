@@ -1,0 +1,414 @@
+<%- include('includes/header') %>
+<body class="bg-dark container">
+  <div class="jumbotron bg-dark text-light">
+    <h1 class="display-4">Audio Video Equipment Rental and Services</h1>
+    <p class="lead">
+      We provide a variety of equipment rental and services that are priced
+      competitively.
+    </p>
+    <hr class="my-4" />
+    <p>
+      Whatever your media or presentation needs are we've got you covered. We
+      can provide services for any size event from memorial services, wedding
+      rehersal dinners, backyard movies, business presentations to larger venues
+      like field parties and movie nights at the park.
+    </p>
+    <p>
+      We provide a "no touch" service with all of our equipement that might come
+      into contact with our customers either UVC sterilized as with our FM
+      receivers or wiped down intiseptically as with our rental equipment. We
+      follow all CDC guidlines. The safety and wellbeing of our customers is our
+      #1 priority.
+    </p>
+  </div>
+  <div class="container mb-3 pb-4">
+    <div class="card text-center">
+      <div class="c-head">
+        <div class="card-header text-light">
+          <h5>Rental and Services Price Listing</h5>
+        </div>
+      </div>
+      <!-- Bootstrap card with services price listing -->
+      <div class="card-body bg-dark text-light">
+        <h5>All Pricing is for One Day</h5>
+        <ul class="list-group text-muted">
+          <li class="list-group-item d-flex list-between list-between2">
+            <h6>5000 Lumen Projector</h6>
+            <h6>$125</h6>
+          </li>
+          <li class="list-group-item d-flex list-between list-between2">
+            <h6>100" Diagonal Screen with Frame</h6>
+            <h6>$75</h6>
+          </li>
+          <li class="list-group-item d-flex list-between list-between2">
+            <h6>
+              150 Watt Sound System with 4-Channel Mixer, One Wired Microphone
+              with Stand and Speaker Stands
+            </h6>
+            <h6>$100</h6>
+          </li>
+          <li
+            class="list-group-item d-flex list-between list-between2"
+            id="list-between3"
+          >
+            <h6>
+              1,000 Watt Sound System with 7-Channel Mixer, One Wired Mic, One
+              Wireless Mic, Microphone Stands and Speaker Stands
+            </h6>
+            <h6>$250</h6>
+          </li>
+          <li class="list-group-item d-flex list-between list-between2">
+            <h6>
+              17 Foot Inflatable Screen with 13 foot Diagonal Viewing Area
+            </h6>
+            <h6>$200</h6>
+          </li>
+          <li class="list-group-item d-flex list-between list-between2">
+            <h6>
+              24 Foot Inflatable Screen with 20 Foot Diagonal Viewing Area
+            </h6>
+            <h6>$300</h6>
+          </li>
+          <li class="list-group-item d-flex list-between list-between2">
+            <h6>FM Transmitter 150 Foot Radius</h6>
+            <h6>$50</h6>
+          </li>
+          <li class="list-group-item d-flex list-between list-between2">
+            <h6>Set of 50 FM Receivers</h6>
+            <h6>$100</h6>
+          </li>
+          <li class="list-group-item d-flex list-between list-between2">
+            <h6>Blu-ray Player</h6>
+            <h6>$25</h6>
+          </li>
+          <li class="list-group-item d-flex list-between list-between2">
+            <h6>
+              2,000 Watt Peak Portable Generator Fully Fueled (OUTDOOR USE ONLY)
+            </h6>
+            <h6>$50</h6>
+          </li>
+          <li class="list-group-item d-flex list-between list-between2">
+            <h6>4,000 Watt Peak Generator Fully Fueled (OUTDOOR USE ONLY)</h6>
+            <h6>$75</h6>
+          </li>
+          <li class="list-group-item d-flex list-between list-between2">
+            <h6>Powerpoint Design and Development</h6>
+            <h6>$30/hr</h6>
+          </li>
+          <li class="list-group-item d-flex list-between list-between2">
+            <h6>Labor 7:00 am - 5 pm</h6>
+            <h6>$40/hr</h6>
+          </li>
+          <li class="list-group-item d-flex list-between list-between2">
+            <h6>Labor 5 pm - Midnight</h6>
+            <h6>$60/hr</h6>
+          </li>
+          <li class="list-group-item d-flex list-between list-between2">
+            <h6>Labor Midnight - 7:00 am</h6>
+            <h6>$60/hr</h6>
+          </li>
+          <li class="list-group-item d-flex list-between list-between2">
+            <h6>Holidays</h6>
+            <h6>$60/hr</h6>
+          </li>
+        </ul>
+        <p class="card-text">
+          There is a minimal rental period of one day on all equipment. A 4-hour
+          minimum applies to all labor calls.
+        </p>
+        <p class="card-text">
+          A service charge of 20% will be added to all equipment rentals for
+          set-up and dismantle. Cancellations must be made within 24 hours.
+        </p>
+        <p class="res-button">
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-lg btn-inline btn-danger mt-5"
+            data-toggle="modal"
+            data-target="#preservationModal"
+          >
+            Request a Reservation!
+          </button>
+        </p>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="preservationModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="preservationModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content text-dark text-left">
+              <div class="modal-header">
+                <h5 class="modal-title" id="preservationModal">
+                  Reservation Request
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  Please fill out the form below and we'll get back to you as
+                  soon as possible
+                </p>
+                <form id="presentationServicesReservations">
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control" id="raFirstName" placeholder="First name">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" id="raLastName" placeholder="Last name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="raEmail"
+                      required="required"
+                      placeholder="name@example.com"
+                    />
+                    <small id="emailHelp" class="form-text text-muted"
+                      >We'll never share your email with anyone else.</small
+                    >
+                    <div class="form-group"></div>
+                    <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="raTel"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          required="required"
+          placeholder="502-555-5555"
+        />
+        <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control" id="raAddress" placeholder="1234 Main St">
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Address 2</label>
+          <input type="text" class="form-control" id="raAddress2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="raCity">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <select id="raState" class="form-control">
+              <option selected>Kentucky</option>
+              <option>Indiana</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="raZip">Zip</label>
+            <input type="text" class="form-control" id="raZip">
+          </div>
+        </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="options">Rental Services Requested</label>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="options"
+                        id="raprojectorCheck"
+                      />
+                      <label class="form-check-label" for="projectorCheck">
+                        5000 Lumen Projector
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="screen100Check"
+                      />
+                      <label class="form-check-label" for="screen100Check">
+                        100" Diagonal Screen with Frame
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="sound150Check"
+                      />
+                      <label class="form-check-label" for="sound150Check">
+                        150 Watt Sound System
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="sound1000Check"
+                      />
+                      <label class="form-check-label" for="sound1000Check">
+                        1,000 Watt Sound System
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="screen17Check"
+                      />
+                      <label class="form-check-label" for="screen17Check">
+                        17 Foot Inflatable Screen
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="screen24Check"
+                      />
+                      <label class="form-check-label" for="screen24Check">
+                        24 Foot Inflatable Screen
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="fmTransmitCheck"
+                      />
+                      <label class="form-check-label" for="fmTransmitCheck">
+                        FM Transmitter
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="fmReceiveCheck"
+                      />
+                      <label class="form-check-label" for="fmReceiveCheck">
+                        Set of 50 FM Receivers
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="bRayCheck"
+                      />
+                      <label class="form-check-label" for="bRayCheck">
+                        Blu-ray Player
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="gen2000Check"
+                      />
+                      <label class="form-check-label" for="gen2000Check">
+                        2,000 Watt Peak Portable Generator
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="gen4000Check"
+                      />
+                      <label class="form-check-label" for="gen4000Check">
+                        4,000 Watt Peak Generator
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="powerPointCheck"
+                      />
+                      <label class="form-check-label" for="powerPointCheck">
+                        Powerpoint Design and Development
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="laborCheck"
+                      />
+                      <label class="form-check-label" for="laborCheck">
+                        Labor
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <form>
+                      <label for="date">Date Reservation Requested</label><br />
+                      <input
+                        type="date"
+                        id="resDate"
+                        required="required"
+                        name="date"
+                      />
+                    </form>
+                  </div>
+                  <div class="form-group">
+                    <label for="prequests">Additional Requests</label>
+                    <textarea
+                      name="message"
+                      id="prequests"
+                      rows="3"
+                      class="form-control"
+                    ></textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="submit"
+                      class="btn btn-danger"
+                      data-dismiss="modal"
+                      id="raRequest"
+                    >
+                      Send Request
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="c-foot">
+        <div class="card-footer text-light pb-4">
+          Additional Services are Available Upon Request
+        </div>
+      </div>
+    </div>
+    <hr class="my-4" />
+    <p class="text-light text-center">
+      We have numerous payment options available through PayPal. We will provide
+      a payment link in your return email after your reservation is finalized.
+      We can also accept traditional forms of payment such as check, cash, or
+      money order.
+    </p>
+    <img src="cc-badges.png" alt="PayPal" class="rounded mx-auto d-block" />
+    <script src="js/prjssheet.js"></script>
+    <%- include('includes/footer') %>
+  </div>
+</body>

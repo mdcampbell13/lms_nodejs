@@ -1,0 +1,148 @@
+/* keeps body below and above header and footer */
+body {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Z-index to keep COVID-19 alert at top of stack */
+.alert-z {
+  z-index: 100;
+}
+
+/* class keeps card-headers black */
+.c-head {
+  background-color: black;
+}
+
+/* class keeps card-footers black */
+.c-foot {
+  background-color: black;
+}
+
+/* Custom CSS for footers */
+.footer {
+  padding-top: 0.5rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* padding for Font Awsome icons in footer */
+.fab {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.footer-text {
+  margin-bottom: 3px;
+}
+
+/* keeps list items seperated */
+.list-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* keeps call to action button text centered at bottom of screen-rental card-deck */
+.res-button {
+  text-align: center;
+}
+
+.zip_input {
+  width: 180px;
+  margin: auto;
+}
+
+/* keeps submit button for zipcode input in stack below footer */
+#basic-addon2 {
+  z-index: 0;
+}
+
+/* sets card-header height to keep call to action buttons even at bottom of cards at these breakpoints */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .ch-between {
+    height: 80px;
+  }
+}
+
+/* sets card-header height and bottom text margins to keep call to action buttons even at bottom of cards at these breakpoints */
+@media (max-width: 991px) and (min-width: 768px) {
+  .ch-between {
+    height: 120px;
+  }
+  #ab-margin {
+    margin-bottom: 71px;
+  }
+  #sb-margin {
+    margin-bottom: 70px;
+  }
+  #ad-body {
+    margin-bottom: 62px;
+  }
+}
+
+/* changes alignment of fleurdelys in 404 page at these breakpoints */
+@media (max-width: 992px) and (min-width: 200px) {
+  .fof_space {
+    text-align: center;
+  }
+}
+
+/* changes alignment of fleurdelys in 404 page at these breakpoints */
+@media (min-width: 992px) {
+  .fof_space {
+    display: inline;
+  }
+}
+
+/* changes display in services and add-on price listings to flex-direction: column to keep them from collapsing above this breakpoint */
+@media only screen and (max-width: 1080px) {
+  .list-between2 {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* sets card-deck in services price listings to flex-column to keep them from breaking between these 2 breakpoints */
+@media (max-width: 767px) and (min-width: 520px) {
+  #d-b-display {
+    flex-direction: column;
+  }
+}
+
+/* center aligns large text in 404 page on smaller screens */
+@media (min-width: 992px) {
+  #lost-title {
+    text-align: center;
+    font-size: 175px;
+    padding-left: 6rem;
+  }
+}
+
+/* sets the text-alignment and margin between these 2 items in the price-listing for services so the text doesn't collapse between these 2 breakpoints */
+@media (max-width: 1200px) and (min-width: 1081px) {
+  #list-between3 {
+    text-align: left;
+  }
+  .list-between4 {
+    margin-right: 1rem;
+  }
+}
+
+/* changes alignment of paragraph-text in 404 page at these breakpoints */
+@media (max-width: 992px) {
+  #lost-para {
+    text-align: center;
+    display: block;
+  }
+}
+
+/* sets card-deck in screen screen rental price listings to flex-column to keep them from breaking between these 2 breakpoints */
+@media (max-width: 991px) and (min-width: 200px) {
+  #r-b-display {
+    flex-direction: column;
+  }
+}
