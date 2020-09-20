@@ -1,4 +1,19 @@
-document.getElementById("raRequest").onclick = function () {
+document.getElementById("raRequest").onclick = function () {  
+
+  raValidate = function() {
+    document.getElementById("servicesReservation").reset();
+    if(raFirstName == "") {alert("You must provide a first name.");};
+    if(raLastName == "") {alert("You must provide a last name.")};
+    if (regexEmail.test(raEmail) == false) {alert("You must provide a valid email address.")};
+    if(raTel == "") {alert("You must provide a valid phone number.")};
+    if (regexTel.test(raTel) == false) {alert("You must provide a valid phone number.")};
+    if(raAddress == "") {alert("You must provide a valid address.")};
+    if(raCity == "") {alert("You must provide a valid City.")};
+    if((isNaN(raZip) || raZip.length !== 5)) {alert("Please enter a valid zip code.");}
+    if(raDate == "") {alert("You must provide a valid Date.")};
+} 
+  const regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+  const regexTel = /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}/;
   let raFirstName = "";
   let raLastName = "";
   let raEmail = "";
@@ -49,6 +64,8 @@ document.getElementById("raRequest").onclick = function () {
   raDate = document.getElementById("resDate").value;
   raReq = document.getElementById("prequests").value;
 
+  raValidate();
+
   raIncident = {
     first_name: raFirstName,
     last_name: raLastName,
@@ -79,5 +96,4 @@ document.getElementById("raRequest").onclick = function () {
   raString = JSON.stringify(raIncident);
   alert(raString);
   alert("Thank You! You're reservation has been sent.");
-  location.reload(true);
 };

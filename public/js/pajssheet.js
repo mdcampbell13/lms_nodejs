@@ -1,4 +1,21 @@
 document.getElementById("paRequest").onclick = function () {
+  
+  paValidate = function() {
+    document.getElementById("packageReservation").reset();
+    if(paFirstName == "") {alert("You must provide a first name.");};
+    if(paLastName == "") {alert("You must provide a last name.")};
+    if (regexEmail.test(paEmail) == false) {alert("You must provide a valid email address.")};
+    if (regexTel.test(paTel) == false) {alert("You must provide a valid phone number.")};
+    if(paAddress == "") {alert("You must provide a valid address.")};
+    if(paCity == "") {alert("You must provide a valid City.")};
+    if((isNaN(paZip) || paZip.length !== 5)) {
+      alert("Please enter a valid zip code.");}
+    if(paDate == "") {alert("You must provide a valid Date.")};
+}
+  
+  const regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+  const regexTel = /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}/;
+  let scrFirstName = "";
   let paFirstName = "";
   let paLastName = "";
   let paEmail = "";
@@ -31,6 +48,8 @@ document.getElementById("paRequest").onclick = function () {
   paZip = document.getElementById("paZip").value;
   paDate = document.getElementById("paDate").value;
   paReq = document.getElementById("paRequests").value;
+  
+  paValidate()
 
   paIncident = {
     first_name: paFirstName,
@@ -53,5 +72,4 @@ document.getElementById("paRequest").onclick = function () {
   paString = JSON.stringify(paIncident);
   alert(paString);
   alert("Thank You! You're reservation has been sent.");
-  location.reload(true);
 };

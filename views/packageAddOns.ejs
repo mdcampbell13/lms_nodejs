@@ -55,7 +55,7 @@
         Please fill out the form below and we'll get back to you as soon
         as possible
       </p>
-      <form id="packageReservation">
+      <form id="packageReservation" action="/sendPackAddForm" method="POST">
         <div class="row">
           <div class="col">
             <input type="text" class="form-control" id="paFirstName" placeholder="First name">
@@ -71,6 +71,8 @@
             class="form-control"
             id="paEmail"
             required="required"
+            validate="required:true"
+            pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*"
             placeholder="name@example.com"
           />
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>

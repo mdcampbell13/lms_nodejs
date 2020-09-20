@@ -106,7 +106,7 @@
           Please fill out the form below and we'll get back to you as soon
           as possible
         </p>
-        <form id="packageReservation">
+        <form id="screenReservation" action="/newScreenReserve" method="POST">
           <div class="row">
             <div class="col">
               <input type="text" class="form-control" id="scrFirstName" placeholder="First name">
@@ -210,5 +210,7 @@
         <hr class="my-4">
           <p class="text-light text-center">We have numerous payment options available through PayPal. We will provide a payment link in your return email after your reservation is finalized. We can also accept traditional forms of payment such as check, cash, or money order.</p>
           <img src="cc-badges.png" alt="PayPal" class="rounded mx-auto d-block"/>
-          <script src="js/scjssheet.js"></script>
+      </div>
+      </div>
+      <script src="js/scjssheet.js"></script>
           <%- include('includes/footer') %>

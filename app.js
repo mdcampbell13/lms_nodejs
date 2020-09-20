@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-let sanitizeHTML = require('sanitize-html')
 
 const router = require('./router')
 

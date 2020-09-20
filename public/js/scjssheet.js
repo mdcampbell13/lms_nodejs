@@ -1,6 +1,24 @@
 document.getElementById("scrSubmit").onclick = function () {
+ 
+  scrValidate = function() {
+    document.getElementById("screenReservation").reset();
+    if(scrFirstName == "") {alert("You must provide a first name.")};
+    if(scrLastName == "") {alert("You must provide a last name.")};
+    if (regexEmail.test(sPackEmail) == false) {alert("You must provide a valid email address.")};
+    if (regexTel.test(scrTel) == false) {alert("You must provide a valid phone number.")};
+    if(scrAddress == "") {alert("You must provide a valid address.")};
+    if(scrCity == "") {alert("You must provide a valid City.")};
+    if((isNaN(scrZip) || scrZip.length !== 5)) {
+      alert("Please enter a valid zip code.");}
+    if(scrDate == "") {alert("You must provide a valid Date.")};
+}
+
+  
+  const regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+  const regexTel = /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}/;
   let scrFirstName = "";
   let scrLastName = "";
+  let scrTel = "";
   let sPackEmail = "";
   let scrSize = "";
   let scrAddress = "";
@@ -25,6 +43,8 @@ document.getElementById("scrSubmit").onclick = function () {
   scrDate = document.getElementById("scrDate").value;
   scrnReq = document.getElementById("srequests").value;
 
+  scrValidate();
+
   scrIncident = {
     first_name: scrFirstName,
     last_name: scrLastName,
@@ -43,5 +63,4 @@ document.getElementById("scrSubmit").onclick = function () {
   scrString = JSON.stringify(scrIncident);
   alert(scrString);
   alert("Thank You! You're reservation has been sent.");
-  location.reload(true); 
 };
