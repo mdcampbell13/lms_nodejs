@@ -1,4 +1,6 @@
-document.getElementById("raRequest").onclick = function () {  
+document.querySelector("#raRequest").addEventListener("click", function (event) {  
+
+  event.preventDefault();
 
   raValidate = function() {
     document.getElementById("servicesReservation").reset();
@@ -96,4 +98,4 @@ document.getElementById("raRequest").onclick = function () {
   raString = JSON.stringify(raIncident);
   alert(raString);
   alert("Thank You! You're reservation has been sent.");
-};
+}, false);

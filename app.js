@@ -1,5 +1,7 @@
+
 const express = require('express')
 const app = express()
+
 
 const router = require('./router')
 
@@ -16,5 +18,6 @@ app.use(function(req, res, next) {
     res.status(404);
     res.render('fof');
 });
+
 
 app.listen(3000)

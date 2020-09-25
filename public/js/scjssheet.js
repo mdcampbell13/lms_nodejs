@@ -1,5 +1,7 @@
-document.getElementById("scrSubmit").onclick = function () {
+document.querySelector("#scrSubmit").addEventListener("click", function (event) {
  
+  event.preventDefault();
+
   scrValidate = function() {
     document.getElementById("screenReservation").reset();
     if(scrFirstName == "") {alert("You must provide a first name.")};
@@ -63,4 +65,4 @@ document.getElementById("scrSubmit").onclick = function () {
   scrString = JSON.stringify(scrIncident);
   alert(scrString);
   alert("Thank You! You're reservation has been sent.");
-};
+}, false);

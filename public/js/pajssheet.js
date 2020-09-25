@@ -1,5 +1,7 @@
-document.getElementById("paRequest").onclick = function () {
+document.querySelector("#paRequest").addEventListener("click", function (event) {
   
+  event.preventDefault();
+
   paValidate = function() {
     document.getElementById("packageReservation").reset();
     if(paFirstName == "") {alert("You must provide a first name.");};
@@ -15,7 +17,6 @@ document.getElementById("paRequest").onclick = function () {
   
   const regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
   const regexTel = /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}/;
-  let scrFirstName = "";
   let paFirstName = "";
   let paLastName = "";
   let paEmail = "";
@@ -72,4 +73,4 @@ document.getElementById("paRequest").onclick = function () {
   paString = JSON.stringify(paIncident);
   alert(paString);
   alert("Thank You! You're reservation has been sent.");
-};
+}, false);
