@@ -160,7 +160,7 @@
                   Please fill out the form below and we'll get back to you as
                   soon as possible
                 </p>
-                <form id="servicesReservation" action="" method="">
+                <form id="servicesReservation" action="/sendServicesReservation" method="POST">
                   <div class="row">
                     <div class="col">
                       <input type="text" class="form-control" id="raFirstName" placeholder="First name">
@@ -193,7 +193,7 @@
         />
         <div class="form-group">
           <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" id="raAddress" placeholder="1234 Main St">
+          <input type="text" class="form-control" id="raAddress" required="required" placeholder="1234 Main St">
         </div>
         <div class="form-group">
           <label for="inputAddress2">Address 2</label>
@@ -202,7 +202,7 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="raCity">
+            <input type="text" required="required" class="form-control" id="raCity">
           </div>
           <div class="form-group col-md-4">
             <label for="inputState">State</label>
@@ -213,7 +213,7 @@
           </div>
           <div class="form-group col-md-2">
             <label for="raZip">Zip</label>
-            <input type="text" class="form-control" id="raZip">
+            <input type="text" class="form-control" required="required" id="raZip">
           </div>
         </div>
                   </div>
@@ -360,7 +360,6 @@
                         required="required"
                         name="date"
                       />
-                    </form>
                   </div>
                   <div class="form-group">
                     <label for="prequests">Additional Requests</label>
@@ -382,7 +381,6 @@
                     <button
                       type="submit"
                       class="btn btn-danger"
-                      data-dismiss="modal"
                       id="raRequest"
                     >
                       Send Request
@@ -410,5 +408,4 @@
     <img src="cc-badges.png" alt="PayPal" class="rounded mx-auto d-block" />
     </div>
   </div> 
-  <script src="js/prjssheet.js"></script>
     <%- include('includes/footer') %>
