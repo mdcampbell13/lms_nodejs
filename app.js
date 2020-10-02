@@ -9,10 +9,6 @@ app.use(express.static( 'public' ) )
 app.set('views', 'views')
 app.set('view engine', 'ejs')
 
-app.get('/', function(req, res) {
-    res.render ("home")
-})
-
 app.use('/', router)
 
 app.use(function(req, res, next) {
@@ -20,5 +16,4 @@ app.use(function(req, res, next) {
     res.render('fof');
 });
 
-
-app.listen(3000)
+module.exports = app

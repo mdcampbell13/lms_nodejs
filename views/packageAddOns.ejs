@@ -35,7 +35,7 @@
                       <h6>$50</h6>
                     </li>
                 </ul>
-            <p class="card-text">Rental period of this equipment is only for duration of screen rental.</p>
+            <p class="card-text">Rental period of this equipment is only for duration of screen rental. Reservations are required to be made at least one week in advance.</p>
             <p class="res-button">
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-lg btn-inline btn-danger mt-5" data-toggle="modal" data-target="#areservationModal">
@@ -58,10 +58,10 @@
       <form id="packageReservation" action="/sendAddOnsReservation" method="POST">
         <div class="row">
           <div class="col">
-            <input type="text" class="form-control" id="paFirstName" placeholder="First name">
+            <input type="text" class="form-control" id="paFirstName" placeholder="First Name" name="First Name">
           </div>
           <div class="col">
-            <input type="text" class="form-control" id="paLastName" placeholder="Last name">
+            <input type="text" class="form-control" id="paLastName" placeholder="Last Name" name="Last Name">
           </div>
         </div>
         <div class="form-group">
@@ -70,6 +70,7 @@
             type="email"
             class="form-control"
             id="paEmail"
+            name="Email"
             required="required"
             validate="required:true"
             pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*"
@@ -83,6 +84,7 @@
           type="tel"
           class="form-control"
           id="paTel"
+          name="Phone Number"
           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           required="required"
           placeholder="502-555-5555"
@@ -90,64 +92,63 @@
       </div>
         <div class="form-group">
           <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" required="required" id="paAddress" placeholder="1234 Main St">
+          <input type="text" class="form-control" required="required" id="paAddress" placeholder="1234 Main St" name="Address">
         </div>
         <div class="form-group">
           <label for="inputAddress2">Address 2</label>
-          <input type="text" class="form-control" id="paAddress2" placeholder="Apartment, studio, or floor">
+          <input type="text" class="form-control" id="paAddress2" placeholder="Apartment, studio, or floor" name="Address 2">
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputCity">City</label>
-            <input type="text" class="form-control" required="required" id="paCity">
+            <input type="text" class="form-control" required="required" id="paCity" name="City">
           </div>
           <div class="form-group col-md-4">
             <label for="inputState">State</label>
-            <select id="paState" class="form-control">
+            <select id="paState" class="form-control" name="State">
               <option selected>Kentucky</option>
               <option>Indiana</option>
             </select>
           </div>
           <div class="form-group col-md-2">
             <label for="paZip">Zip</label>
-            <input type="text" class="form-control" required="required" id="paZip">
+            <input type="text" class="form-control" required="required" id="paZip" name="Zip Code">
           </div>
         </div>
         <div class="form-group">
           <label for="servicesRequested">Rental Services Requested</label>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="fmTransmitterCheck1">
+            <input class="form-check-input" type="checkbox" id="fmTransmitterCheck1" name="FM Transmitter">
             <label class="form-check-label" for="fmTransmitterCheck">
               FM Transmitter
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="fmReceiversCheck1">
+            <input class="form-check-input" type="checkbox" id="fmReceiversCheck1" name="25 FM Receivers">
             <label class="form-check-label" for="fmReceiversCheck">
               FM Receivers
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="2000WattGenCheck1">
+            <input class="form-check-input" type="checkbox" id="2000WattGenCheck1" name="2000 Watt Generator">
             <label class="form-check-label" for="2000WattGenCheck">
               2,000 Watt Peak Portable Generator
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="4000WattGenCheck1">
+            <input class="form-check-input" type="checkbox" id="4000WattGenCheck1" name="4000 Watt Generator">
             <label class="form-check-label" for="4000WattGenCheck">
               4,000 Watt Peak Generator
             </label>
           </div>
         </div>
         <div class="form-group">
-          <form>
-            <label for="date">Date Reservation Requested</label><br />
+            <label for="date">Date Reservation Requested</label><br/>
             <input
               type="date"
               id="paDate"
               required="required"
-              name="date"
+              name="Reservation Date"
             />
         </div>
         <div class="form-group">
@@ -156,6 +157,7 @@
             id="paRequests"
             rows="3"
             class="form-control"
+            name="Additional Requests"
           ></textarea>
         </div>
         <div class="modal-footer">
@@ -170,7 +172,7 @@
           </div>
           </div>
           <div class="c-foot">
-          <div class="card-footer text-light pb-4">
+          <div class="card-footer text-light pb-4 text-center">
             Additional Services are Available Upon Request
           </div>
         </div>
