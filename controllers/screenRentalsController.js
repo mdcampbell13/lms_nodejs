@@ -7,5 +7,5 @@ exports.viewScreenRentalsScreen = function(req, res) {
 exports.sendScreenRentalReservation = function(req, res) {
     let screenPackReservation = new ScreenPackReservation(req.body)
     screenPackReservation.sendScreenReservation()
-    res.send("This will send a screen reservation")
+    res.render("home")
 }
