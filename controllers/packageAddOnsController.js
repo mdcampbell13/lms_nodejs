@@ -8,5 +8,6 @@ exports.viewPackageAddOnsScreen = function(req, res) {
 exports.sendAddOnsReservation = function(req, res) {
     let pAddOnsReservation = new AddOnsReservation(req.body)
     pAddOnsReservation.sendAddOnReservation()
-    res.render("home")
+    res.render("packageAddOns")
+
 }
