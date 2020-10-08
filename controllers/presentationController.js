@@ -6,6 +6,10 @@ exports.viewPresentationScreen = function(req, res) {
 
 exports.sendServicesReservation = function(req, res) {
     let servicesReservation = new ServicesReservation(req.body)
-    servicesReservation.sendServicesReservation()
-    res.render("presentationServices")
+    try {
+        servicesReservation.sendServicesReservation()
+        res.render("serveSuccess")
+    } catch {
+        res.render("serveFailure")
+    }
 }

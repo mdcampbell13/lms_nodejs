@@ -1,4 +1,4 @@
-const servicesReservationsCollections = require ('../db').collection("serviceReservations")
+const servicesReservationsCollections = require ('../db').db().collection("serviceReservations")
 
 let ServicesReservation = function(servdata) {
     this.servdata = servdata

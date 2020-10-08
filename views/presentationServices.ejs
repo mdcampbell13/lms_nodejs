@@ -163,10 +163,10 @@
                 <form id="servicesReservation" action="/sendServicesReservation" method="POST">
                   <div class="row">
                     <div class="col">
-                      <input type="text" class="form-control" id="raFirstName" name="First Name" placeholder="First Name">
+                      <input type="text" class="form-control" required="required" id="raFirstName" name="First Name" placeholder="First Name">
                     </div>
                     <div class="col">
-                      <input type="text" class="form-control" id="raLastName" name="Last Name" placeholder="Last Name">
+                      <input type="text" class="form-control" required="required" id="raLastName" name="Last Name" placeholder="Last Name">
                     </div>
                   </div>
                   <div class="form-group">
@@ -421,7 +421,5 @@
       money order.
     </p>
     <img src="cc-badges.png" alt="PayPal" class="rounded mx-auto d-block" />
-    </div>
-  </div> 
-  <script src="js/servjssheet.js"
+    <script src="js/servjssheet.js"></script>
     <%- include('includes/footer') %>

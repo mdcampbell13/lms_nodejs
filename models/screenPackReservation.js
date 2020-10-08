@@ -1,4 +1,4 @@
-const screenPackReservationsCollections = require ('../db').collection("screenReservations")
+const screenPackReservationsCollections = require ('../db').db().collection("screenReservations")
 
 let ScreenPackReservation = function (scrdata) {
     this.scrdata = scrdata

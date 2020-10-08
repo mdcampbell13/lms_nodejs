@@ -19,10 +19,7 @@ function checkPaRes() {
     if(new Date(paResDate) < new Date(futureDate)) {
     alert(`Sorry. Reservations must be made one week in advance. Please enter a date after ${mo}-${da}-${ye}.`);
     document.getElementById("paDate").value = null;
-    } else {
-    alert(`Your Reservation for ${paResDate} was made. Thank You!`);
-  }
-
+    }
 
 }
 

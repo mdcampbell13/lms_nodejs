@@ -1,0 +1,77 @@
+<%- include('includes/header') %>
+    <body class="bg-dark container mb-4">
+
+<!-- Modal -->
+<div class="modal fade" id="paFailureModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <h5 class="modal-title text-light" id="exampleModalLabel"><i class="fas fa-times text-light"></i> Failure.</h5>
+      </div>
+      <div class="modal-body">
+        Oh snap! Something went wrong. Please resubmit your reservation.
+      </div>
+      <div class="modal-footer">
+        <a href="/packageAddOns"><button type="button" class="btn btn-primary">OK</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="jumbotron bg-dark text-light">
+        <h1 class="display-4">Screen Package Add-Ons</h1>
+        <p class="lead">We have a number of options available at special rates only available with our screen rental packages.</p>
+        <hr class="my-4">
+        <p>FM transmitters and receivers are available for you to have a quiet night if you are concerned about neighbors, if you have attendees with special requirements or other concerns. We also have generators available in 2000 watt and 4000 watt peak sizes.</p>
+        <p>We provide a "no touch" service with all of our equipement that might come into contact with our customers either UVC sterilized as with our FM receivers or wiped down intiseptically as with our rental equipment. We follow all CDC guidlines. The safety and wellbeing of our customers is our #1 priority.</p>
+      </div>
+      <div class="container mb-3 pb-4">
+        <!-- Bootstrap card with price listing -->
+        <div class="card text-center">
+          <div class="c-head">
+          <div class="card-header text-light"><h5>
+              Screen Package Add-Ons Price Listing</h5>
+          </div>
+          </div>
+          <div class="card-body bg-dark text-light">
+              <h5>These prices are only available as additions to screen package rentals.</h5>
+              <ul class="list-group text-muted">
+                  <li class="list-group-item d-flex list-between list-between2">
+                    <h6>FM Transmitter 150 Foot Radius</h6>
+                    <h6>$25</h6>
+                  </li>
+                  <li class="list-group-item d-flex list-between list-between2">
+                      <h6>FM Receivers</h6>
+                      <h6>25 for $25</h6>
+                    </li>
+                    <li class="list-group-item d-flex list-between list-between2">
+                      <h6>2,000 Watt Peak Portable Generator</h6>
+                      <h6>$25</h6>
+                    </li>
+                    <li class="list-group-item d-flex list-between list-between2">
+                      <h6>4,000 Watt Peak Generator</h6>
+                      <h6>$50</h6>
+                    </li>
+                </ul>
+            <p class="card-text">Rental period of this equipment is only for duration of screen rental. Reservations are required to be made at least one week in advance.</p>
+            <p class="res-button">
+                <button type="button" class="btn btn-lg btn-inline btn-danger mt-5" data-toggle="" data-target="">
+                    Request Package Add-Ons</button>
+    </div>
+  </div>
+</div>
+</div>
+          </div>
+          </div>
+          <div class="c-foot">
+          <div class="card-footer text-light pb-4 text-center">
+            Additional Services are Available Upon Request
+          </div>
+        </div>
+        </div>
+          <hr class="my-4">
+            <p class="text-light text-center">We have numerous payment options available through PayPal. We will provide a payment link in your return email after your reservation is finalized. We can also accept traditional forms of payment such as check, cash, or money order.</p>
+            <img src="cc-badges.png" alt="PayPal" class="rounded mx-auto d-block"/>
+        </div>
+        </div>
+        <script src="js\Resjs.js"></script>
+        <%- include('includes/footer') %>

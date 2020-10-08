@@ -19,9 +19,7 @@ function checkScrRes() {
     if(new Date(scrResDate) < new Date(futureDate)) {
     alert(`Sorry. Reservations must be made one week in advance. Please enter a date after ${mo}-${da}-${ye}.`);
     document.getElementById("scrDate").value = null;
-    } else {
-    alert(`Your Reservation for ${scrResDate} was made. Thank You!`);
-  }
+    }
 
 
 }

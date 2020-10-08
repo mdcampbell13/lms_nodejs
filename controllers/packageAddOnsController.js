@@ -1,13 +1,15 @@
-const AddOnsReservation = require('../models/AddOnsReservation')
-const PAddOnsReservation = require('../models/addOnsReservation')
+const AddOnsReservation = require('../models/addOnsReservation')
 
 exports.viewPackageAddOnsScreen = function(req, res) {
     res.render('packageAddOns')
-}
+}    
 
 exports.sendAddOnsReservation = function(req, res) {
-    let pAddOnsReservation = new AddOnsReservation(req.body)
-    pAddOnsReservation.sendAddOnReservation()
-    res.render("packageAddOns")
-
+        let pAddOnsReservation = new AddOnsReservation(req.body)
+        try {
+        pAddOnsReservation.sendAddOnReservation()
+        res.render('paSuccess')
+        }  catch {
+        res.render('paFailure')
+    }
 }

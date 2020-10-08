@@ -1,4 +1,4 @@
-const addOnReservationsCollections = require ('../db').collection("addOnReservations")
+const addOnReservationsCollections = require ('../db').db().collection("addOnReservations")
 
 let PAddOnsReservation = function (adata) {
     this.adata = adata

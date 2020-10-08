@@ -20,9 +20,7 @@ function CheckServRes() {
     if(new Date(resDate) < new Date(futureDate)) {
     alert(`Sorry. Reservations must be made one week in advance. Please enter a date after ${mo}-${da}-${ye}.`);
     document.getElementById("resDate").value = null;
-    } else {
-    alert(`Your Reservation for ${resDate} was made. Thank You!`);
-  }
+    }
 
 
 }

@@ -1,5 +1,21 @@
 <%- include('includes/header') %>
     <body class="bg-dark container mb-4"> 
+<!-- Modal -->
+<div class="modal fade" id="screenFailureModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-danger">
+          <h5 class="modal-title text-light" id="exampleModalLabel"><i class="fas fa-times text-light"></i> Failure.</h5>
+        </div>
+        <div class="modal-body">
+          Oh snap! Something went wrong. Please resubmit your reservation.
+        </div>
+        <div class="modal-footer">
+          <a href="screenRentals"><button type="button" class="btn btn-primary">OK</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
       <div class="jumbotron bg-dark text-light">
         <h1 class="display-4">Screen Rental Packages</h1>
         <p class="lead">We have a variety of screen rental packages for your private get together or public event, whatever the size.</p>
@@ -83,120 +99,8 @@
         <h7 class="text-light">* Screen Images are Simulated</h7>
         <div>
           <p class="res-button">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-lg btn-inline btn-danger mt-5" data-toggle="modal" data-target="#sreservationModal">
+            <button type="button" class="btn btn-lg btn-inline btn-danger mt-5">
               Request a Reservation!</button>
-              <!-- Modal -->
-<div class="modal fade" id="sreservationModal" tabindex="-1" aria-labelledby="sreservationModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" data-target="#sreservationModal">Reservation Request</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>
-          Please fill out the form below and we'll get back to you as soon
-          as possible
-        </p>
-        <form id="screenReservation" action="/sendScreenRentalReservation" method="POST">
-          <div class="row">
-            <div class="col">
-              <input type="text" class="form-control" required="required" id="scrFirstName" name="First Name" placeholder="First name">
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" required="required" id="scrLastName" name="Last Name" placeholder="Last name">
-            </div>
-          </div>
-          <div class="form-group">
-          <div class="form-group">
-            <label for="Email">Email Address</label>
-            <input
-              type="email"
-              class="form-control"
-              name="Email"
-              id="scrEmail"
-              required="required"
-              placeholder="name@example.com"
-            />
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input
-              type="tel"
-              class="form-control"
-              id="scrTel"
-              name="Phone Number"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              required="required"
-              placeholder="502-555-5555"
-            />
-            <div class="form-group">
-              <label for="inputAddress">Address</label>
-              <input type="text" class="form-control" id="scrAddress" required="required" name="Address" placeholder="1234 Main St">
-            </div>
-            <div class="form-group">
-              <label for="inputAddress2">Address 2</label>
-              <input type="text" class="form-control" id="scrAddress2" name="Address 2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" required="required" name="City" id="scrCity">
-              </div>
-              <div class="form-group col-md-4">
-                <label for="inputState">State</label>
-                <select id="scrState" class="form-control"  name="State">
-                  <option selected>Kentucky</option>
-                  <option>Indiana</option>
-                </select>
-              </div>
-              <div class="form-group col-md-2">
-                <label for="scrZip">Zip</label>
-                <input type="text" class="form-control" required="required" id="scrZip" name="Zip Code">
-              </div>
-            </div>  
-          <div class="form-group">
-            <label for="packageOptions">Screen Package Options</label>
-            <select class="form-control" id="screenOptions" name="Screen Size Option">
-              <option value="smallScreenPack">Small Screen Package</option>
-              <option value="mediumScreenPack">Medium Screen Package</option>
-              <option value="largeScreenPack">Large Screen Package</option>
-            </select>
-          </div>
-          <div class="form-group">
-              <label for="resDate">Reservation Date Requested</label><br>
-              <input type="date" id="scrDate" required="required" name="Reservation Date">
-
-          </div>
-          <div class="form-group">
-            <label for="srequests">Additional Requests</label>
-            <textarea
-              id="srequests"
-              rows="3"
-              class="form-control"
-              name="Additional Requests"
-            ></textarea>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-danger" id="scrSubmit">Send Request</button>
-          </div>
-        </form>
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
           </p>
           <p class="text-light pt-5">   
             Reservations for screen rental packages must be made at least one week in advance with a $50 returnable deposit. Full payment is required atleast 48 hours before your event. In the case of adverse weather a full refund will be provided with an opportunity to reschedule your event on an alternative day during the same week. We reserve the right to cancel any event in the case of forcasted adverse weather or in the event of sudden adverse weather that may cause damage to our equipment. Main media content is limited to one movie or 2 hours.
@@ -213,5 +117,5 @@
           <img src="cc-badges.png" alt="PayPal" class="rounded mx-auto d-block"/>
       </div>
       </div>
-      <script src="js/scrjssheet.js"
+      <script src="js/Resjs.js"></script>
           <%- include('includes/footer') %>
