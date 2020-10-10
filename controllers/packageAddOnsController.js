@@ -15,7 +15,15 @@ exports.sendAddOnsReservation = function(req, res) {
             from: 'test@test.com',
             subject: 'Thank you for your screen package addon reservation!',
             text: `Thank you for your reservation, ${pAddOnsReservation.adata["First Name"]}! You will receive an email within 1-2 business days with payment options.`,
-            html: `<strong>Thank you for your reservation, ${pAddOnsReservation.adata["First Name"]}!</strong><br>You will receive an email within 1-2 business days with payment options.<br>Your order number is ${pAddOnsReservation.adata._id}.`
+            html: `<strong>Thank you for your reservation, ${pAddOnsReservation.adata["First Name"]}!</strong><br>Your reservation is set for ${pAddOnsReservation.adata["Reservation Date"]}.<br>You will receive an email within 1-2 business days with payment options.<br>Your order number is ${pAddOnsReservation.adata._id}.`
+        })
+        jsonAddPack = JSON.stringify(pAddOnsReservation.adata)
+        sendgrid.send({
+            to: 'mike.campbell1967@gmail.com',
+            from: 'test@test.com',
+            subject: 'Screen Package Add-On Submitted',
+            text: `Screen Package Add-On Reservation Submitted: ${jsonAddPack}`,
+            html: `<strong>Screen Package Add-On Reservation for ${pAddOnsReservation.adata["Reservation Date"]}:</strong><br>${jsonAddPack}`
         })
         res.render('paSuccess')
         }  catch {
