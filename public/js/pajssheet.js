@@ -20,9 +20,19 @@ function checkPaRes() {
     alert(`Sorry. Reservations must be made one week in advance. Please enter a date after ${mo}-${da}-${ye}.`);
     document.getElementById("paDate").value = null;
     }
-
 }
+
+// function to validate reservation zip
+function validateAddZip() {
+  pzip = document.getElementById("paZip").value;
+  if (isNaN(pzip) || pczip.length !== 5) {
+    alert("Please enter a valid zip code.");
+    document.getElementById("paZip").value = "";
+  } 
+}
+
 
 document.getElementById("paRequest").onclick = function () {
   checkPaRes();
+  validateAddZip();
 }

@@ -17,7 +17,7 @@ exports.sendAddOnsReservation = function(req, res) {
             text: `Thank you for your reservation, ${pAddOnsReservation.adata["First Name"]}! You will receive an email within 1-2 business days with payment options.`,
             html: `<strong>Thank you for your reservation, ${pAddOnsReservation.adata["First Name"]}!</strong><br>Your reservation is set for ${pAddOnsReservation.adata["Reservation Date"]}.<br>You will receive an email within 1-2 business days with payment options.<br>Your order number is ${pAddOnsReservation.adata._id}.`
         })
-        jsonAddPack = JSON.stringify(pAddOnsReservation.adata)
+        jsonAddPack = JSON.stringify(pAddOnsReservation)
         sendgrid.send({
             to: 'mike.campbell1967@gmail.com',
             from: 'test@test.com',

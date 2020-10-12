@@ -21,8 +21,8 @@ exports.sendServicesReservation = function(req, res) {
         sendgrid.send({
             to: 'mike.campbell1967@gmail.com',
             from: 'test@test.com',
-            subject: 'A new screen presentation services reservation has been submitted',
-            text: `Screen Package Reservation Submitted: ${jsonSrvRes}`,
+            subject: 'Presentation Services Reservation Submitted',
+            text: `Presentation Services Reservation Submitted: ${jsonSrvRes}`,
             html: `<strong>Screen Package Reservation for ${servicesReservation.servdata["Reservation Date"]}:</strong><br>${jsonSrvRes}`
         })
         res.render("serveSuccess")
