@@ -60,6 +60,17 @@ body {
   z-index: 0;
 }
 
+/* keeps forecast cards 50rem or less */
+#wc {
+  max-width: 50rem;
+}
+
+/* forecast cards display */
+#weatherblock {
+  display: block;
+}
+
+
 /* sets card-header height to keep call to action buttons even at bottom of cards at these breakpoints */
 @media (max-width: 1199px) and (min-width: 992px) {
   .ch-between {
@@ -90,7 +101,7 @@ body {
   }
 }
 
-/* changes alignment of fleurdelys in 404 page at these breakpoints */
+/* changes alignment of fleurdelys in 404 page at this breakpoints */
 @media (min-width: 992px) {
   .fof_space {
     display: inline;
@@ -106,15 +117,11 @@ body {
   }
 }
 
-/* sets button in movie picker card to this top margin to keep spacing even between these 2 breakpoints */
-@media (max-width: 767px) and (min-width: 200px) {
-  #moviepick {
-    margin-top: 22px;
-}
-}
+
+
 
 /* adds space between weather and movie picker cards between these 2 breakpoints */
-@media (max-width: 575px) and (min-width: 200px) {
+@media (max-width: 575px) {
   #movRouletteCard {
     margin-top: 10px;
   }

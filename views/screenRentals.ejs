@@ -86,6 +86,7 @@
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-lg btn-inline btn-danger mt-5" data-toggle="modal" data-target="#sreservationModal">
               Request a Reservation!</button>
+              
               <!-- Modal -->
 <div class="modal fade" id="sreservationModal" tabindex="-1" aria-labelledby="sreservationModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -198,7 +199,7 @@
 </div>
           </p>
           <p class="text-light pt-5">   
-            Reservations for screen rental packages must be made at least one week in advance with a $50 returnable deposit. Full payment is required atleast 48 hours before your event. In the case of adverse weather a full refund will be provided with an opportunity to reschedule your event on an alternative day during the same week. We reserve the right to cancel any event in the case of forcasted adverse weather or in the event of sudden adverse weather that may cause damage to our equipment. Main media content is limited to one movie or 2 hours.
+            Reservations for screen rental packages must be made at least 4 days in advance with a $50 returnable deposit. Full payment is required atleast 48 hours before your event. In the case of adverse weather a full refund will be provided with an opportunity to reschedule your event on an alternative day during the same week. We reserve the right to cancel any event in the case of forcasted adverse weather or in the event of sudden adverse weather that may cause damage to our equipment. Main media content is limited to one movie or 2 hours.
           </p>
           <p class="text-light pt-1">
             Customer is to provide all content. If you plan on charging for your event and do not own the film rights to your content we recommend purchasing a license from <a href="https://www.swank.com/" target="_blank" class="text-decoration-none">Swank</a>. We are happy to provide assistance if needed.
@@ -213,17 +214,18 @@
             <div class="card">
               <div class="card-body bg-secondary text-light">
                 <h5 class="card-title">Weather Forecast</h5>
-                <p class="card-text">Check the weather forecast for your event date.</p>
+                <p class="card-text">Check the 7 day weather forecast for your area.</p>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#weatherModal">Get Weather Forcast</button>
               </div>
             </div>
           </div>
+          
           <!-- Weather Modal -->
           <div class="modal fade" id="weatherModal" tabindex="-1" role="dialog" aria-labelledby="weatherModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-sm" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Get the forecast for your event date.</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Get the 7 day forecast for your event area.</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -232,13 +234,10 @@
                   <form>
                     <div class="row">
                       <div class="col">
-                        <label for="scrZip">Zip</label>
+                        <label for="eventZip">Zip Code</label>
                         <input type="text" class="form-control" required="required" id="weatherZip" name="Weather Zip Code">
                       </div>
-                      <div class="col">
-                        <label for="resDate">Event Date</label><br>
-                        <input type="date" id="weatherDate" required="required" name="Weather Date">
-                      </div>
+                      
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -249,8 +248,8 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6" id="movRouletteCard">
-            <div class="card">
+          <div class="col-sm-6">
+            <div class="card" id="movRouletteCard">
               <div class="card-body bg-secondary text-light">
                 <h5 class="card-title">Movie Roulette</h5>
                 <p class="card-text">Spin the wheel. Get a random movie pick.</p>
@@ -260,7 +259,7 @@
           </div>
           <!--Movie Modal -->
           <div class="modal fade" id="moviepickModal" tabindex="-1" role="dialog" aria-labelledby="moviepickModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-sm" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Get a random movie pick!</h5>
@@ -273,37 +272,28 @@
                     <div class="row">
                       <div class="col">
                         <div class="form-group">
-                          <label for="movieDateRange">Date Range</label>
-                          <select class="form-control" id="movDateRange" name="movDateRange">
-                            <option value="newRelease">New Releases</option>
-                            <option value="movAll">All</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="form-group">
-                          <label for="packageOptions">Screen Package Options</label>
+                          <label for="genre">Movie Genre</label>
                           <select class="form-control" id="movGenre" name="movieGenre">
                             <option value="">All</option>
-                            <option value="action">Action</option>
-                            <option value="animated">Animated</option>
-                            <option value="documentary">Documentary</option>
-                            <option value="drama">Drama</option>
-                            <option value="family">Family</option>
-                            <option value="fantasy">Fantasy</option>
-                            <option value="hisotry">History</option>
-                            <option value="comedy">Comedy</option>
-                            <option value="war">War</option>
-                            <option value="crime">Crime</option>
-                            <option value="music">Music</option>
-                            <option value="mystery">Mystery</option>
-                            <option value="romance">Romance</option>
-                            <option value="sci fi">Sci Fi</option>
-                            <option value="horror">Horror</option>
-                            <option value="TV movie">TV Movie</option>
-                            <option value="thriller">Thriller</option>
-                            <option value="western">Western</option>
-                            <option value="thriller">Adventure</option>
+                            <option value="28">Action</option>
+                            <option value="12">Adventure</option>
+                            <option value="16">Animated</option>
+                            <option value="35">Comedy</option>
+                            <option value="80">Crime</option>
+                            <option value="99">Documentary</option>
+                            <option value="18">Drama</option>
+                            <option value="10751">Family</option>
+                            <option value="14">Fantasy</option>
+                            <option value="36">History</option>
+                            <option value="27">Horror</option>
+                            <option value="10402">Music</option>
+                            <option value="9648">Mystery</option>
+                            <option value="10749">Romance</option>
+                            <option value="878">Science Fiction</option>
+                            <option value="53">Thriller</option>
+                            <option value="10770">TV Movie</option>
+                            <option value="10752">War</option>
+                            <option value="37">Western</option>
                           </select>
                         </div>
                       </div>
@@ -311,7 +301,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-danger">Save changes</button>
+                  <button type="button" class="btn btn-danger" id="movspin">SPIN!</button>
                 </div>
                 </form>
               </div>
@@ -319,11 +309,10 @@
             </div>
           </div>
         </div>
-
         <hr class="my-4">
           <p class="text-light text-center">We have numerous payment options available through PayPal. We will provide a payment link in your return email after your reservation is finalized. We can also accept traditional forms of payment such as check, cash, or money order.</p>
           <img src="cc-badges.png" alt="PayPal" class="rounded mx-auto d-block"/>
       </div>
       </div>
-      <script src="js/scrjssheet.js"
-          <%- include('includes/footer') %>
+      <%- include('includes/footer') %>
+      <script src="js/scrjssheet.js"></script>

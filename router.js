@@ -4,6 +4,7 @@ const homeController = require('./controllers/homeController')
 const presentationController = require('./controllers/presentationController')
 const screenRentalsController = require('./controllers/screenRentalsController')
 const packageAddOnsController = require('./controllers/packageAddOnsController')
+const forecastController = require('./controllers/forecastController')
 const paSuccessController = require('./controllers/paSuccessController')
 const paFailureController = require('./controllers/paFailureController')
 const serveSuccessController = require('./controllers/serveSuccessController')
@@ -29,6 +30,9 @@ router.post('/sendAddOnsReservation', packageAddOnsController.sendAddOnsReservat
 
 // package reserve success route
 router.get('/paSuccess', paSuccessController.viewpaSuccessScreen)
+
+// package reserve success route
+router.get('/forecast', forecastController.viewforecastScreen)
 
 // package reserve fail route
 router.get('/paFailure', paFailureController.viewpaFailureScreen)
