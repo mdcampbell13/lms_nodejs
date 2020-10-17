@@ -5,6 +5,7 @@ const presentationController = require('./controllers/presentationController')
 const screenRentalsController = require('./controllers/screenRentalsController')
 const packageAddOnsController = require('./controllers/packageAddOnsController')
 const forecastController = require('./controllers/forecastController')
+const movieRouletteController = require('./controllers/movieRouletteController')
 const paSuccessController = require('./controllers/paSuccessController')
 const paFailureController = require('./controllers/paFailureController')
 const serveSuccessController = require('./controllers/serveSuccessController')
@@ -33,6 +34,9 @@ router.get('/paSuccess', paSuccessController.viewpaSuccessScreen)
 
 // package reserve success route
 router.get('/forecast', forecastController.viewforecastScreen)
+
+// movie roulette route
+router.get('/movieRoulette', movieRouletteController.viewMovieRouletteScreen)
 
 // package reserve fail route
 router.get('/paFailure', paFailureController.viewpaFailureScreen)
