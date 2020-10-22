@@ -60,14 +60,8 @@ body {
   z-index: 0;
 }
 
-/* keeps forecast cards 50rem or less */
-#wc {
-  max-width: 50rem;
-}
+#openweathermap-widget-11 {
 
-/* forecast cards display */
-#weatherblock {
-  display: block;
 }
 
 
@@ -120,12 +114,6 @@ body {
 
 
 
-/* adds space between weather and movie picker cards between these 2 breakpoints */
-@media (max-width: 575px) {
-  #movRouletteCard {
-    margin-top: 10px;
-  }
-}
 
 /* sets card-deck in services price listings to flex-column to keep them from breaking between these 2 breakpoints */
 @media (max-width: 767px) and (min-width: 520px) {
