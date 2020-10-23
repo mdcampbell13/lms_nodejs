@@ -45,6 +45,17 @@ body {
   justify-content: space-between;
 }
 
+/* keeps order buttons the same width */
+.orderButton {
+  width: 14rem;
+  height: auto;
+}
+
+/* changes pointer to hand when over Order Status in navbar */
+.orderModal {
+cursor: pointer;
+}
+
 /* keeps call to action button text centered at bottom of screen-rental card-deck */
 .res-button {
   text-align: center;
@@ -60,8 +71,8 @@ body {
   z-index: 0;
 }
 
-#openweathermap-widget-11 {
-
+#navbrandTitle {
+  font-size: 17px;
 }
 
 

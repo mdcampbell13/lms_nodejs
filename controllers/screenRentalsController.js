@@ -14,15 +14,15 @@ exports.sendScreenRentalReservation = function(req, res) {
             to: screenPackReservation.scrdata.Email,
             from: 'test@test.com',
             subject: 'Thank you for your screen package reservation!',
-            text: `Thank you for your reservation, ${screenPackReservation.scrdata["First Name"]}! You will receive an email within 1-2 business days with payment options.`,
-            html: `<strong>Thank you for your reservation, ${screenPackReservation.scrdata["First Name"]}!</strong><br>Your reservation is set for ${screenPackReservation.scrdata["Reservation Date"]}<br>You will receive an email within 1-2 business days with payment options.<br>Your order number is ${screenPackReservation.scrdata._id}.`
+            text: `Thank you for your reservation, ${screenPackReservation.scrdata["First Name"]}!\nYour reservation for a ${screenPackReservation.scrdata["Screen Size Option"]} on ${screenPackReservation.scrdata["Reservation Date"]} has been submitted\nYou will receive an email within 1-2 business days with payment options.\nYour order number is ${screenPackReservation.scrdata._id}.`,
+            html: `<strong>Thank you for your reservation, ${screenPackReservation.scrdata["First Name"]}!</strong><br>Your reservation for a ${screenPackReservation.scrdata["Screen Size Option"]} on ${screenPackReservation.scrdata["Reservation Date"]} has been submitted<br>You will receive an email within 1-2 business days with payment options.<br>Your order number is ${screenPackReservation.scrdata._id}.`
         })
         jsonScrPack = JSON.stringify(screenPackReservation)
         sendgrid.send({
             to: 'mike.campbell1967@gmail.com',
             from: 'test@test.com',
             subject: 'Screen Package Reservation Submitted',
-            text: `Screen Package Reservation Submitted: ${jsonScrPack}`,
+            text: `Screen Package Reservation for ${screenPackReservation.scrdata["Reservation Date"]}:\n${jsonScrPack}`,
             html: `<strong>Screen Package Reservation for ${screenPackReservation.scrdata["Reservation Date"]}:</strong><br>${jsonScrPack}`
         })
         res.render("screenSuccess")

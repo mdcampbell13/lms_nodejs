@@ -15,14 +15,14 @@ function checkScrResDate() {
 
   var date = new Date();
 
-  var futureDate = date.addDays(3);
+  var futureDate = date.addDays(6);
   const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(futureDate);
   const mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(futureDate);
   const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(futureDate);
   
 
     if(new Date(scrResDate) < new Date(futureDate)) {
-    alert(`Sorry. Reservations must be made 4 days in advance. Please enter a date after ${mo}-${da}-${ye}.`);
+    alert(`Sorry. Reservations must be made one week in advance. Please enter a date after ${mo}-${da}-${ye}.`);
     document.getElementById("scrDate").value = null;
     }
 }

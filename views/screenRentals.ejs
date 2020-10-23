@@ -168,14 +168,14 @@
           <div class="form-group">
             <label for="packageOptions">Screen Package Options</label>
             <select class="form-control" id="screenOptions" name="Screen Size Option">
-              <option value="smallScreenPack">Small Screen Package</option>
-              <option value="mediumScreenPack">Medium Screen Package</option>
-              <option value="largeScreenPack">Large Screen Package</option>
+              <option value="Small Screen Package">Small Screen Package</option>
+              <option value="Medium Screen Package">Medium Screen Package</option>
+              <option value="Large Screen Package">Large Screen Package</option>
             </select>
           </div>
           <div class="form-group">
               <label for="resDate">Reservation Date Requested</label><br>
-              <input type="date" id="scrDate" required="required" name="Reservation Date">
+              <input type="date" id="scrDate" required="required" name="Reservation Date" value="Reservation Date">
           </div>
           <div class="form-group">
             <label for="srequests">Additional Requests</label>
@@ -184,6 +184,7 @@
               rows="3"
               class="form-control"
               name="Additional Requests"
+              value="Additional Requests"
             ></textarea>
           </div>
           <div class="modal-footer">
@@ -279,5 +280,9 @@
           <img src="cc-badges.png" alt="PayPal" class="rounded mx-auto d-block"/>
       </div>
       </div>
+      <%- include('includes/addOnOrderModal') %>
+      <%- include('includes/screenOrderModal') %>
+      <%- include('includes/serviceOrderModal') %>
+      <%- include('includes/orderModal') %>
       <%- include('includes/footer') %>
       <script src="js/scrjssheet.js"></script>

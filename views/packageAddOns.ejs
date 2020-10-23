@@ -118,25 +118,25 @@
         <div class="form-group">
           <label for="servicesRequested">Rental Services Requested</label>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="fmTransmitterCheck1" name="FM Transmitter">
+            <input class="form-check-input" type="checkbox" id="fmTransmitterCheck1" name="FM Transmitter" value="FM Transmitter">
             <label class="form-check-label" for="fmTransmitterCheck">
               FM Transmitter
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="fmReceiversCheck1" name="25 FM Receivers">
+            <input class="form-check-input" type="checkbox" id="fmReceiversCheck1" name="25 FM Receivers" value="25 FM Receivers">
             <label class="form-check-label" for="fmReceiversCheck">
               FM Receivers
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="2000WattGenCheck1" name="2000 Watt Generator">
+            <input class="form-check-input" type="checkbox" id="2000WattGenCheck1" name="2000 Watt Generator" value="2000 Watt Generator">
             <label class="form-check-label" for="2000WattGenCheck">
               2,000 Watt Peak Portable Generator
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="4000WattGenCheck1" name="4000 Watt Generator">
+            <input class="form-check-input" type="checkbox" id="4000WattGenCheck1" name="4000 Watt Generator" value="4000 Watt Generator">
             <label class="form-check-label" for="4000WattGenCheck">
               4,000 Watt Peak Generator
             </label>
@@ -160,6 +160,9 @@
             name="Additional Requests"
           ></textarea>
         </div>
+        <div class="form-group">
+          <input id="addList" class="form-control" name="addList" type="hidden" value="">
+        </div>
         <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       <button type="submit" class="btn btn-danger" id="paRequest">Send Request</button>
@@ -182,5 +185,9 @@
             <img src="cc-badges.png" alt="PayPal" class="rounded mx-auto d-block"/>
         </div>
         </div>
+        <%- include('includes/addOnOrderModal') %>
+        <%- include('includes/screenOrderModal') %>
+        <%- include('includes/serviceOrderModal') %>
+        <%- include('includes/orderModal') %>
         <%- include('includes/footer') %>
         <script src="js\pajssheet.js"></script>

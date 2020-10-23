@@ -228,6 +228,7 @@
                         type="checkbox"
                         id="raprojectorCheck"
                         name="5000 Lumen Projector"
+                        value="5000 Lumen Projector"
                       />
                       <label class="form-check-label" for="projectorCheck">
                         5000 Lumen Projector
@@ -239,6 +240,7 @@
                         type="checkbox"
                         id="screen100Check"
                         name='100" Screen'
+                        value='100" Screen'
                       />
                       <label class="form-check-label" for="screen100Check">
                         100" Diagonal Screen with Frame
@@ -250,6 +252,7 @@
                         type="checkbox"
                         id="sound150Check"
                         name="150 Watt Sound System"
+                        value="150 Watt Sound System"
                       />
                       <label class="form-check-label" for="sound150Check">
                         150 Watt Sound System
@@ -261,6 +264,7 @@
                         type="checkbox"
                         id="sound1000Check"
                         name="1000 Watt Sound System"
+                        value="1000 Watt Sound System"
                       />
                       <label class="form-check-label" for="sound1000Check">
                         1,000 Watt Sound System
@@ -272,6 +276,7 @@
                         type="checkbox"
                         id="screen17Check"
                         name="17' Screen"
+                        value="17' Inflatable Screen"
                       />
                       <label class="form-check-label" for="screen17Check">
                         17 Foot Inflatable Screen
@@ -283,6 +288,7 @@
                         type="checkbox"
                         id="screen24Check"
                         name="24' Screen"
+                        value="24' Inflatable Screen"
                       />
                       <label class="form-check-label" for="screen24Check">
                         24 Foot Inflatable Screen
@@ -294,6 +300,7 @@
                         type="checkbox"
                         id="fmTransmitCheck"
                         name="FM Transmitter"
+                        value="FM Transmitter"
                       />
                       <label class="form-check-label" for="fmTransmitCheck">
                         FM Transmitter
@@ -305,6 +312,7 @@
                         type="checkbox"
                         id="fmReceiveCheck"
                         name="50 FM Recievers"
+                        value="50 FM Receivers"
                       />
                       <label class="form-check-label" for="fmReceiveCheck">
                         Set of 50 FM Receivers
@@ -316,6 +324,7 @@
                         type="checkbox"
                         id="bRayCheck"
                          name="Blu-Ray"
+                         value="Blu-Ray Player"
                       />
                       <label class="form-check-label" for="bRayCheck">
                         Blu-ray Player
@@ -327,6 +336,7 @@
                         type="checkbox"
                         id="gen2000Check"
                         name="2000 Watt Generator"
+                        value="2000 Watt Generator"
                       />
                       <label class="form-check-label" for="gen2000Check">
                         2,000 Watt Peak Portable Generator
@@ -338,6 +348,7 @@
                         type="checkbox"
                         id="gen4000Check"
                         name="4000 Watt"
+                        value="4000 Watt Generator"
                       />
                       <label class="form-check-label" for="gen4000Check">
                         4,000 Watt Peak Generator
@@ -349,6 +360,7 @@
                         type="checkbox"
                         id="powerPointCheck"
                         name="Power Point"
+                        value="Power Point Reservation"
                       />
                       <label class="form-check-label" for="powerPointCheck">
                         Powerpoint Design and Development
@@ -360,6 +372,7 @@
                         type="checkbox"
                         id="laborCheck"
                         name="Labor"
+                        value="Labor"
                       />
                       <label class="form-check-label" for="laborCheck">
                         Labor
@@ -374,6 +387,7 @@
                         id="resDate"
                         required="required"
                         name="Reservation Date"
+                        value="Reservation Date"
                       />
                   </div>
                   <div class="form-group">
@@ -383,7 +397,11 @@
                       rows="3"
                       class="form-control"
                       name="Additional Requests"
+                      value="Additional Requests"
                     ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <input id="serviceList" class="form-control" name="serviceList" type="hidden" value="">
                   </div>
                   <div class="modal-footer">
                     <button
@@ -421,5 +439,9 @@
       money order.
     </p>
     <img src="cc-badges.png" alt="PayPal" class="rounded mx-auto d-block" />
+    <%- include('includes/addOnOrderModal') %>
+    <%- include('includes/screenOrderModal') %>
+    <%- include('includes/serviceOrderModal') %>
+    <%- include('includes/orderModal') %>
     <%- include('includes/footer') %>
     <script src="js/servjssheet.js"></script>

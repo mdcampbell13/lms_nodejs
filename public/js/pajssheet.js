@@ -1,3 +1,5 @@
+addList2 = [];
+
 function checkPaRes() {
 
   let paResDate = document.getElementById("paDate").value;
@@ -32,7 +34,22 @@ function validateAddZip() {
 }
 
 
+// function to create add ons requested list
+function acheck_boxes() {
+  let addList = [];
+    $("input").each(function() {
+      if ($(this).is(':checked')) {
+        let checked = ($(this).val());
+        addList.push(checked);
+      }
+    });
+    return addList;
+  }
+
+
 document.getElementById("paRequest").onclick = function () {
+  addList2 = acheck_boxes();
+  document.getElementById("addList").value = addList2;
   checkPaRes();
   validateAddZip();
 }

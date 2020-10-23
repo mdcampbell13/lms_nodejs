@@ -1,3 +1,5 @@
+serviceList2 = [];
+
 function CheckServRes() {
 
   let resDate = document.getElementById("resDate").value;
@@ -32,7 +34,21 @@ function validateServiceZip() {
   } 
 }
 
+// function to create services requested list
+function scheck_boxes() {
+  let serviceList = [];
+    $("input").each(function() {
+      if ($(this).is(':checked')) {
+        let checked = ($(this).val());
+        serviceList.push(checked);
+      }
+    });
+    return serviceList;
+  }
+
 document.getElementById("raRequest").onclick = function () {
+  serviceList2 = scheck_boxes();
+  document.getElementById("serviceList").value = serviceList2;
   CheckServRes();
   validateServiceZip();
 }
