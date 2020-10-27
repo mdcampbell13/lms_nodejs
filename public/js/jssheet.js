@@ -75,7 +75,7 @@ document.getElementById("basic-addon2").onclick = function () {
 }
 
 document.getElementById("czip").addEventListener("keydown", function(e) {
-  if (e.keyCode === 13) {
+  if (e.key === 'Enter') {
     checkZip();
   }
 });

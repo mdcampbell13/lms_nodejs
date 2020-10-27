@@ -30,3 +30,12 @@ exports.sendServicesReservation = function(req, res) {
         res.render("serveFailure")
     }
 }
+
+exports.viewserviceOrderScreen = async function(req, res) {
+    try {
+        let servicesReservation = await ServicesReservation.findServiceOrderById(req.params.id)
+        res.render('serviceOrder', {servicesReservation: servicesReservation})
+    } catch {
+        res.render('orderErrorScreen')
+    }
+}

@@ -12,6 +12,7 @@ const serveSuccessController = require('./controllers/serveSuccessController')
 const serveFailureController = require('./controllers/serveFailureController')
 const screenSuccessController = require('./controllers/screenSuccessController')
 const screenFailureController = require('./controllers/screenFailureController')
+const orderErrorController = require('./controllers/orderErrorController')
 const fofController = require('./controllers/fofController')
 
 // home routes
@@ -52,6 +53,18 @@ router.get('/screenSuccess', screenSuccessController.viewScreenSuccessScreen)
 
 // screen reserve fail route
 router.get('/screenFailure', screenFailureController.viewScreenFailureScreen)
+
+// service order route
+router.get('/serviceOrder/:id', presentationController.viewserviceOrderScreen)
+
+// screen reserve fail route
+router.get('/screenRentalOrder/:id', screenRentalsController.viewscreenRentalOrderScreen)
+
+// screen reserve fail route
+router.get('/addOnsOrder/:id', packageAddOnsController.viewaddOnsOrderScreen)
+
+// order fail route
+router.get('/orderErrorScreen', orderErrorController.vieworderErrorScreen)
 
 // package fof (404) routes
 router.get('/fof', fofController.viewfofScreen)

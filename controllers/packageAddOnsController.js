@@ -30,3 +30,16 @@ exports.sendAddOnsReservation = function(req, res) {
         res.render('paFailure')
     }
 }
+
+exports.viewaddOnsOrderScreen = function(req, res) {
+    res.render('addOnsOrder')
+}
+
+exports.viewaddOnsOrderScreen = async function(req, res) {
+    try {
+        let addOnsReservation = await AddOnsReservation.findAddOnOrderById(req.params.id)
+        res.render('addOnsOrder', {addOnsReservation: addOnsReservation})
+    } catch {
+        res.render('orderErrorScreen')
+    }
+}

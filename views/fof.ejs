@@ -1,16 +1,15 @@
 <%- include('includes/header') %>
-<body>
   <body class="bg-dark container"> 
-      <div class="jumbotron bg-dark text-light">
+    <div class="jumbotron bg-dark text-light">
         <div class="fof_space">
         <img src="fleur-de-lys3.jpg" width="300" height="300" alt="" loading="lazy">
         <h1 class="display-1 d-inline-block align-middle pt-4 fof_space" id="lost-title">OMG!</h1>
-        </div>
-
         <h1 class="display-5 pt-4" id="lost-para">Whoa there buddy! Something has obviously gone terribly wrong!</h1>
         <p class="lead" id="lost-para">No problem. Just click the back arrow or a nav-bar option and you'll be right as rain.</p>
-        <div>
-            <%- include('includes/footer') %>
         </div>
-    </body>
-</html>
+        </div>
+            <%- include('includes/footer') %>
+            <%- include('includes/addOnOrderModal') %>
+            <%- include('includes/screenOrderModal') %>
+            <%- include('includes/serviceOrderModal') %>
+            <%- include('includes/orderModal') %>

@@ -30,3 +30,12 @@ exports.sendScreenRentalReservation = function(req, res) {
         res.render("screenFailure")
     }
 }
+
+exports.viewscreenRentalOrderScreen = async function(req, res) {
+    try {
+        let screenPackReservation = await ScreenPackReservation.findScreenPackOrderById(req.params.id)
+        res.render('screenRentalOrder', {screenPackReservation: screenPackReservation})
+    } catch {
+        res.render('orderErrorScreen')
+    }
+}
