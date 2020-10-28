@@ -9,19 +9,20 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
+          <form id="servicesOrderForm" method="POST">
             <div class="form-group row">
               <label for="serviceOrderNumber" class="col-sm-4 col-form-label">Order Number</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" id="serviceOrderNumber" placeholder="Services Order Number">
+                <input type="text" class="form-control" id="serviceOrderNumber" name="serveOrderNumber" placeholder="Services Order Number">
               </div>
             </div>
-          </form>
          </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-danger">Check Order Status</button>
+          <span id="whereOrder"><a><button type="submit" class="btn btn-danger" id="serveOrderReq">Check Order Status</button></a></span>
         </div>
+      </form>
       </div>
     </div>
   </div>
+  <script src="js/serveOrder.js"></script>

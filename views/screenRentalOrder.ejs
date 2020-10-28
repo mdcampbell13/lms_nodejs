@@ -49,9 +49,8 @@
     </header>
     <body class="bg-dark container text-center mb-4 text-light"> 
         <div class="display-1 mt-5 mb-4">Screen Package Order</div>
-        <div class="h3">Name: <span class="h3" id="FNscreenOrderSpann">#</span> <span class="h3" id="LNscreenOrderSpann">#</span></div>
-        <div class="h3">Order Number: <span class="h3" id="screenOrderNumberSpann">#</span></div>
-        <div class="h3">Reservation Date: <span class="h3" id="screenOrderDateSpann">#</span></div>
-        <br><div class="h3">Screen Package Ordered</div>
-            <div class="h3" id="packageOrdered">#######</div>
+        <div class="h3">Name: <span class="h3" id="FNscreenOrderSpann"><%= screenPackReservation['First Name'] %> </span> <span class="h3" id="LNscreenOrderSpann"><%= screenPackReservation['Last Name'] %></span></div>
+        <div class="h3">Order Number: <span class="h3" id="screenOrderNumberSpann"><%= screenPackReservation._id %></span></div>
+        <div class="h3">Reservation Date: <span class="h3" id="screenOrderDateSpann"><%= screenPackReservation['Reservation Date'] %></span></div>
+        <br><div class="h3">Screen Package Ordered: <span class="h3" id="packageOrdered"><%= screenPackReservation['Screen Size Option'] %></span></div>
     <%- include('includes/footer') %>

@@ -27,5 +27,4 @@ ServicesReservation.findServiceOrderById = function(id) {
     })
 }
 
-
 module.exports = ServicesReservation

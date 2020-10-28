@@ -9,19 +9,20 @@
           </button>
         </div>
         <div class="modal-body">
-            <form>
+            <form id="screenOrderForm" method="POST">
                 <div class="form-group row">
                   <label for="screenOrderNumber" class="col-sm-4 col-form-label">Order Number</label>
                   <div class="col-sm-8">
                     <input type="text" class="form-control" id="screenOrderNumber" placeholder="Screen Package Order Number">
                   </div>
                 </div>
-            </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-danger">Check Order Status</button>
+          <span id="whereScreenOrder"><a><button type="submit" class="btn btn-danger" id="ScreenOrderReq">Check Order Status</button></a></span>
         </div>
+      </form>
       </div>
     </div>
   </div>
+  <script src="js/screenOrder.js"></script>

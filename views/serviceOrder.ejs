@@ -49,15 +49,9 @@
     </header>
     <body class="bg-dark container text-center mb-4 text-light"> 
         <div class="display-1 mt-5 mb-4">Service Order</div>
-        <div class="h3">Name: <span class="h3" id="FNserveOrderSpann">#</span> <span class="h3" id="LNserveOrderSpann">#</span></div>
-        <div class="h3">Order Number: <span class="h3" id="serveOrderNumberSpann">#</span></div>
-        <div class="h3">Reservation Date: <span class="h3" id="serveOrderDateSpann">#</span></div>
-        <br><div class="h3">Services Ordered</div>
-        <div class="list-group">
-            <div class="h3">#######</div>
-            <div class="h3">#######</div>
-            <div class="h3">#######</div>
-            <div class="h3">#######</div>
-            <div class="h3">#######</div>
-        </div>
+        <div class="h3">Name: <span class="h3" id="FNserveOrderSpann"><%= servicesReservation['First Name'] %> </span> <span class="h3" id="LNserveOrderSpann"><%= servicesReservation['Last Name'] %></span></div>
+        <div class="h3">Order Number: <span class="h3" id="serveOrderNumberSpann"><%= servicesReservation._id %></span></div>
+        <div class="h3">Reservation Date: <span class="h3" id="serveOrderDateSpann"><%= servicesReservation['Reservation Date'] %></span></div>
+        <br><div class="h3 mt-2">Services Ordered</div><br>
+            <div class="h4"><%= servicesReservation.serviceList %></div>
     <%- include('includes/footer') %>

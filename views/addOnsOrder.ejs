@@ -49,17 +49,13 @@
     </header>
     <body class="bg-dark container text-center mb-4 text-light"> 
         <div class="display-1 mt-5 mb-4">Package Add-ons Order</div>
-        <div class="h3">Name: <span class="h3" id="FNaddOnOrderSpann">#</span> <span class="h3" id="LNaddOnOrderSpann">#</span></div>
-        <div class="h3">Order Number: <span class="h3" id="addOnOrderNumberSpann">#</span></div>
-        <div class="h3">Reservation Date: <span class="h3" id="addOnOrderDateSpann">#</span></div>
-        <br><div class="h3">Add-ons Ordered</div>
+        <div class="h3">Name: <span class="h3" id="FNaddOnOrderSpann"><%= addOnsReservation['First Name'] %> </span><span class="h3" id="LNaddOnOrderSpann"><%= addOnsReservation['Last Name'] %></span></div>
+        <div class="h3">Order Number: <span class="h3" id="addOnOrderNumberSpann"><%= addOnsReservation._id %></span></div>
+        <div class="h3">Reservation Date: <span class="h3" id="addOnOrderDateSpann"><%= addOnsReservation['Reservation Date'] %></span></div>
+        <br><div class="h3 mt-2">Add-ons Ordered</div><br>
         <div class="list-group">
           <span id="addOns Ordered">
-            <div class="h4">#######</div>
-            <div class="h4">#######</div>
-            <div class="h4">#######</div>
-            <div class="h4">#######</div>
-            <div class="h4">#######</div>
+            <div class="h4"><%= addOnsReservation.addList %></div>
           </span>
         </div>
     <%- include('includes/footer') %>
