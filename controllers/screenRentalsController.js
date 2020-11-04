@@ -22,8 +22,8 @@ exports.sendScreenRentalReservation = function(req, res) {
             to: 'mike.campbell1967@gmail.com',
             from: 'test@test.com',
             subject: 'Screen Package Reservation Submitted',
-            text: `Screen Package Reservation for ${screenPackReservation.scrdata["Reservation Date"]}:\n${jsonScrPack}`,
-            html: `<strong>Screen Package Reservation for ${screenPackReservation.scrdata["Reservation Date"]}:</strong><br>${jsonScrPack}`
+            text: `Screen Package Reservation for ${screenPackReservation.scrdata["Reservation Date"]}:\nOrder Number: ${screenPackReservation.scrdata._id}\n${screenPackReservation.scrdata["First Name"]} ${screenPackReservation.scrdata["Last Name"]}\n${screenPackReservation.scrdata.Email}\n${screenPackReservation.scrdata["Phone Number"]}\n${screenPackReservation.scrdata.Address} ${screenPackReservation.scrdata["Address 2"]}\n${screenPackReservation.scrdata.City}, ${screenPackReservation.scrdata.State} ${screenPackReservation.scrdata["Zip Code"]}\n${screenPackReservation.scrdata["Screen Size Option"]}\n${screenPackReservation.scrdata["Additional Requests"]}`,
+            html: `<strong>Screen Package Reservation for ${screenPackReservation.scrdata["Reservation Date"]}:</strong><br>Order Number: ${screenPackReservation.scrdata._id}<br>${screenPackReservation.scrdata["First Name"]} ${screenPackReservation.scrdata["Last Name"]}<br>${screenPackReservation.scrdata.Email}<br>${screenPackReservation.scrdata["Phone Number"]}<br>${screenPackReservation.scrdata.Address} ${screenPackReservation.scrdata["Address 2"]}<br>${screenPackReservation.scrdata.City}, ${screenPackReservation.scrdata.State} ${screenPackReservation.scrdata["Zip Code"]}<br>${screenPackReservation.scrdata["Screen Size Option"]}<br>${screenPackReservation.scrdata["Additional Requests"]}`
         })
         res.render("screenSuccess")
     } catch {

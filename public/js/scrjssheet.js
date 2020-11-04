@@ -69,7 +69,7 @@ function fetMovie() {
   <div class="card-deck">
   <div class="flex-column">
   <div class="card border-dark bg-dark align-items-center mb-4">
-    <img style="max-width: 100%; height: auto" src="https://image.tmdb.org/t/p/w500/${mPick.poster_path}" width="426" height="640" alt="">
+    <img style="max-width: 100%; height: auto" src="https://image.tmdb.org/t/p/w500${mPick.poster_path}" width="426" height="640" alt="">
     </div>
     </div>
     </div>
@@ -86,7 +86,7 @@ function fetMovie() {
   </div>
 </div>
 </div>
-<br mt-5 mb-5"></br>
+<br class="mt-5 mb-5"></br>
 <div class="text-center">
 <a href="screenRentals"><button class="btn-lg btn-danger mb-5">Back to Screen Packages</button></a>
 </div>

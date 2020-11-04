@@ -48,10 +48,16 @@
         </div>
     </header>
     <body class="bg-dark container text-center mb-4 text-light"> 
-        <div class="display-1 mt-5 mb-4">Service Order</div>
-        <div class="h3">Name: <span class="h3" id="FNserveOrderSpann"><%= servicesReservation['First Name'] %> </span> <span class="h3" id="LNserveOrderSpann"><%= servicesReservation['Last Name'] %></span></div>
-        <div class="h3">Order Number: <span class="h3" id="serveOrderNumberSpann"><%= servicesReservation._id %></span></div>
-        <div class="h3">Reservation Date: <span class="h3" id="serveOrderDateSpann"><%= servicesReservation['Reservation Date'] %></span></div>
-        <br><div class="h3 mt-2">Services Ordered</div><br>
-            <div class="h4"><%= servicesReservation.serviceList %></div>
-    <%- include('includes/footer') %>
+        <div class="display-1 mb-4">Service Order</div>
+        <div class="h4">Name: <span class="h4" id="FNserveOrderSpann"><%= servicesReservation['First Name'] %> </span> <span class="h4" id="LNserveOrderSpann"><%= servicesReservation['Last Name'] %></span></div>
+        <div class="h4">Order Number: <span class="h4" id="serveOrderNumberSpann"><%= servicesReservation._id %></span></div>
+        <div class="h4">Reservation Date: <span class="h4" id="serveOrderDateSpann"><%= servicesReservation['Reservation Date'] %></span></div>
+        <br><div class="h4 mt-2">Services Ordered</div>
+            <div class="h5"><%= servicesReservation.serviceList %></div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+  </html>

@@ -6,6 +6,7 @@ exports.viewPackageAddOnsScreen = function(req, res) {
     res.render('packageAddOns')
 }    
 
+
 exports.sendAddOnsReservation = function(req, res) {
         let pAddOnsReservation = new AddOnsReservation(req.body)
         try {
@@ -22,8 +23,8 @@ exports.sendAddOnsReservation = function(req, res) {
             to: 'mike.campbell1967@gmail.com',
             from: 'test@test.com',
             subject: 'Screen Package Add-On Submitted',
-            text: `Screen Package Add-On Reservation for ${pAddOnsReservation.adata["Reservation Date"]}:\n${jsonAddPack}`,
-            html: `<strong>Screen Package Add-On Reservation for ${pAddOnsReservation.adata["Reservation Date"]}:</strong><br>${jsonAddPack}`
+            text: `Screen Package Add-On Reservation for ${pAddOnsReservation.adata["Reservation Date"]}:\nOrder Number: ${pAddOnsReservation.adata._id}\n${pAddOnsReservation.adata["First Name"]} ${pAddOnsReservation.adata["Last Name"]}\n${pAddOnsReservation.adata.Email}\n${pAddOnsReservation.adata["Phone Number"]}\n${pAddOnsReservation.adata.Address} ${pAddOnsReservation.adata["Address 2"]}\n${pAddOnsReservation.adata.City}, ${pAddOnsReservation.adata.State} ${pAddOnsReservation.adata["Zip Code"]}\n${pAddOnsReservation.adata.addList}\n${pAddOnsReservation.adata["Additional Requests"]}`,
+            html: `<strong>Screen Package Add-On Reservation for ${pAddOnsReservation.adata["Reservation Date"]}:</strong><br>Order Number: ${pAddOnsReservation.adata._id}<br>${pAddOnsReservation.adata["First Name"]} ${pAddOnsReservation.adata["Last Name"]}<br>${pAddOnsReservation.adata.Email}<br>${pAddOnsReservation.adata["Phone Number"]}<br>${pAddOnsReservation.adata.Address} ${pAddOnsReservation.adata["Address 2"]}<br>${pAddOnsReservation.adata.City}, ${pAddOnsReservation.adata.State} ${pAddOnsReservation.adata["Zip Code"]}<br>${pAddOnsReservation.adata.addList}<br>${pAddOnsReservation.adata["Additional Requests"]}`
         })
         res.render('paSuccess')
         }  catch {

@@ -221,59 +221,7 @@
               </div>
             </div>
           </div>
-          <!--Movie Modal -->
-          <div class="modal fade" id="moviepickModal" tabindex="-1" role="dialog" aria-labelledby="moviepickModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Get a random movie pick!</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="row">
-                      <div class="col">
-                        <div class="form-group">
-                          <label for="genre">Movie Genre</label>
-                          <select class="form-control" id="movGenre" name="movieGenre">
-                            <option value="">All</option>
-                            <option value="28">Action</option>
-                            <option value="12">Adventure</option>
-                            <option value="16">Animated</option>
-                            <option value="35">Comedy</option>
-                            <option value="80">Crime</option>
-                            <option value="99">Documentary</option>
-                            <option value="18">Drama</option>
-                            <option value="10751">Family</option>
-                            <option value="14">Fantasy</option>
-                            <option value="36">History</option>
-                            <option value="27">Horror</option>
-                            <option value="10402">Music</option>
-                            <option value="9648">Mystery</option>
-                            <option value="10749">Romance</option>
-                            <option value="878">Science Fiction</option>
-                            <option value="53">Thriller</option>
-                            <option value="10770">TV Movie</option>
-                            <option value="10752">War</option>
-                            <option value="37">Western</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-danger" id="movspin">SPIN!</button>
-                </div>
-                </form>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+          <%- include('includes/movieRouletteModal') %>
 
         <hr class="my-4">
           <p class="text-light text-center">We have numerous payment options available through PayPal. We will provide a payment link in your return email after your reservation is finalized. We can also accept traditional forms of payment such as check, cash, or money order.</p>
