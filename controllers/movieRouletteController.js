@@ -3,23 +3,16 @@ dotenv.config()
 
 const fetch = require("node-fetch")
 
-const MovieAPIKey = process.env.MOVIEDBAPIKEY
+let mPick = {}
 
-let moviePick = {}
-
-fetchMovie = function(req, res) {
-    let movegen = req.params.id
-    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${MovieAPIKey}&with_genres=${movegen}`)
-    .then(response => response.json())
-    .then(data2 => generateMovieList(data2.results))
-    .catch(error => new Error(error))
+function generateMovieList(data2) {
+    mPick = data2[Math.floor(Math.random()*data2.length)];
 }
 
-generateMovieList = function (data2) {
-    moviePick = data2[Math.floor(Math.random()*data2.length)];
-}
-
-
-exports.viewMovieRouletteScreen = function(req, res) {
-    res.render('movieRoulette', moviePick)
+exports.viewMovieRouletteScreen = async function(req, res) {
+        await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.MOVIEDBAPIKEY}&with_genres=${req.params.id}`)
+        .then(res => res.json())
+        .then(data2 => generateMovieList(data2.results))
+        .catch(error => new Error(error))
+        res.render('movieRoulette', {mPick})
 }
