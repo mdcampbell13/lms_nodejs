@@ -1,7 +1,4 @@
-let movegen = 0;
 let wzip = 0;
-let mPick = {};
-let data2 = {};
  
 function checkScrResDate() {
 
