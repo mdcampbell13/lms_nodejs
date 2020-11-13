@@ -36,5 +36,5 @@ function validateScrZip() {
 
 document.getElementById("scrSubmit").onclick = function () {
   checkScrResDate();
-  validateScrZip()
+  validateScrZip();
 }
