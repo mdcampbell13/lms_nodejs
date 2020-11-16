@@ -1,23 +1,23 @@
 $(function() {
-    $('#paSuccessModal').modal('show');
-});
+    $('#paSuccessModal').modal('show')
+})
 
 $(function() {
-    $('#paFailureModal').modal('show');
-});
+    $('#paFailureModal').modal('show')
+})
 
 $(function() {
-    $('#serveSuccessModal').modal('show');
-});
+    $('#serveSuccessModal').modal('show')
+})
 
 $(function() {
-    $('#serveFailureModal').modal('show');
-});
+    $('#serveFailureModal').modal('show')
+})
 
 $(function() {
-    $('#screenSuccessModal').modal('show');
-});
+    $('#screenSuccessModal').modal('show')
+})
 
 $(function() {
-    $('#screenFailureModal').modal('show');
-});
+    $('#screenFailureModal').modal('show')
+})

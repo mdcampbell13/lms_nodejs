@@ -19,22 +19,22 @@ function checkScrResDate() {
   
 
     if(new Date(scrResDate) < new Date(futureDate)) {
-    alert(`Sorry. Reservations must be made one week in advance. Please enter a date after ${mo}-${da}-${ye}.`);
+    alert(`Sorry. Reservations must be made one week in advance. Please enter a date after ${mo}-${da}-${ye}.`)
     document.getElementById("scrDate").value = null;
     }
 }
 
 // function to validate reservation zip
 function validateScrZip() {
-  sczip = document.getElementById("scrZip").value;
+  sczip = document.getElementById("scrZip").value
   if (isNaN(sczip) || sczip.length !== 5) {
-    alert("Please enter a valid zip code.");
-    document.getElementById("scrZip").value = "";
+    alert("Please enter a valid zip code.")
+    document.getElementById("scrZip").value = ""
   } 
 }
 
 
 document.getElementById("scrSubmit").onclick = function () {
-  checkScrResDate();
-  validateScrZip();
+  checkScrResDate()
+  validateScrZip()
 }

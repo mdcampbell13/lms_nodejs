@@ -47,26 +47,26 @@ const zip = [
   40109,
 ];
 
-let czip2 = 0;
+let czip2 = 0
 
 // function to match zip input to an element in zip array and to validate field
 function checkZip() {
-  czip2 = document.getElementById("czip").value;
-  wt_zip = false;
+  czip2 = document.getElementById("czip").value
+  wt_zip = false
   if (isNaN(czip2) || czip2.length !== 5) {
-    alert("Please enter a valid zip code.");
-    document.getElementById("czip").value = "";
+    alert("Please enter a valid zip code.")
+    document.getElementById("czip").value = ""
   } else {
     for (i = 0; i < zip.length; i++)
       if (zip[i] == czip2) {
-        wt_zip = true;
+        wt_zip = true
       }
     if (wt_zip === true) {
-      alert(`Great! ${czip2} is in our service area`);
+      alert(`Great! ${czip2} is in our service area`)
     } else if (wt_zip === false) {
-      alert(`We're sorry. ${czip2} is not in our service area.`);
+      alert(`We're sorry. ${czip2} is not in our service area.`)
     }
-    document.getElementById("czip").value = "";
+    document.getElementById("czip").value = ""
   }
 }
 
@@ -76,6 +76,6 @@ document.getElementById("basic-addon2").onclick = function () {
 
 document.getElementById("czip").addEventListener("keydown", function(e) {
   if (e.key === 'Enter') {
-    checkZip();
+    checkZip()
   }
-});
+})

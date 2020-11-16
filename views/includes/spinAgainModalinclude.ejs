@@ -1,5 +1,5 @@
 <!--Movie Modal -->
-<div class="modal fade" id="moviepickModal" tabindex="-1" role="dialog" aria-labelledby="moviepickModalLabel" aria-hidden="true">
+<div class="modal fade" id="rouletteSpinAgainModal" tabindex="-1" role="dialog" aria-labelledby="rouletteSpinAgainModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -13,8 +13,8 @@
             <div class="row">
               <div class="col">
                 <div class="form-group">
-                  <label for="genre">Movie Genre</label>
-                  <select class="form-control" id="movGenre" name="movieGenre">
+                  <label for="spinAgainGenre">Movie Genre</label>
+                  <select class="form-control" id="mspinAgainGenre" name="mspinAgainGenre">
                     <option value="28">Action</option>
                     <option value="12">Adventure</option>
                     <option value="16">Animated</option>
@@ -41,7 +41,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <span id="moveRoulle2Span"><a><button type="button" class="btn btn-danger" id="movspin2">SPIN!</button></a></span>
+          <span id="againSpan"><button type="button" onclick="window.location.href = document.getElementById('mspinAgainGenre').value" class="btn btn-danger" id="movSpinAgain">SPIN!</button></a></span>
         </div>
         </form>
       </div>
@@ -49,4 +49,3 @@
     </div>
   </div>
 </div>
-<script src="js/movieRouletteModal.js"></script>
