@@ -12,6 +12,7 @@ const serveFailureController = require('./controllers/serveFailureController')
 const screenSuccessController = require('./controllers/screenSuccessController')
 const screenFailureController = require('./controllers/screenFailureController')
 const orderErrorController = require('./controllers/orderErrorController')
+const weatherForecastController = require('./controllers/weatherForecastController')
 const fofController = require('./controllers/fofController')
 
 // home routes
@@ -34,6 +35,9 @@ router.get('/paSuccess', paSuccessController.viewpaSuccessScreen)
 
 // movie roulette route
 router.get('/movieRoulette/:id', movieRouletteController.viewMovieRouletteScreen)
+
+// weather forecast route
+router.get('/weatherForecast/:id', weatherForecastController.viewWeatherForecastScreen)
 
 // package reserve fail route
 router.get('/paFailure', paFailureController.viewpaFailureScreen)
