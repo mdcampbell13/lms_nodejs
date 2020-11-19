@@ -47,22 +47,26 @@
           </nav>
         </div>
     </header>
-  <body class="container bg-dark mt-5">
-    <h1 class="text-light text-center">Hello, world!</h1>
-    <h2 class="text-light"><%= sevenDayForecast.timezone %></h2>
-    <h2 class="text-light"><%= sevenDayForecast.lat %></h2>
-    <h2 class="text-light"><%= sevenDayForecast.lon %></h2>
+  <body class="container bg-dark mt-1">
+    <h1 class="display-2 text-light text-center">Forecast for <%= weatherZipInfo.city %>, <%= weatherZipInfo.state %></h1>
     <div class="container mt-5">
-        <div class="card mb-3 ml-auto mr-auto" style="max-width: 540px;">
+              <div class="card mb-3 ml-auto mr-auto" style="max-width: 540px;">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="..." class="card-img" alt="...">
+                <img src="http://openweathermap.org/img/wn/<%= sevenDayForecast.current.weather[0].icon %>@2x.png" width="125" height="125" alt="weather icon" id="currentIcon">
+                <h2 class="text-center"><strong><%= parseInt(sevenDayForecast.current.temp) %>&deg</strong></h2>
               </div>
               <div class="col-md-8">
                 <div class="card-body bg-secondary text-light">
-                  <h5 class="card-title">Currently</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  <h5 class="card-title text-center">Currently</h5>
+                  <p class="card-text text-center wc"><%= sevenDayForecast.current.weather[0].main %></p>
+                  <p class="card-text text-center wc2"><%= sevenDayForecast.current.weather[0].description %></p>
+                  <p class="card-text text-center wc">Wind Speed: <%= parseInt(sevenDayForecast.current.wind_speed) %> MPH</p>
+                  <p class="card-text text-center wc2">Wind Direction: <%= sevenDayForecast.current.wind_deg %>&deg</p>
+                  <p class="card-text text-center wc">Wind Speed: <%= parseInt(sevenDayForecast.current.wind_speed) %> MPH</p>
+                  <p class="card-text text-center wc2">Wind Direction: <%= sevenDayForecast.current.wind_deg %>&deg</p>
+                  <p class="card-text text-center wc">Sunrise: <%= sevenDayForecast.current.sunrise_time %></p>
+                  <p class="card-text text-center wc">Sunset: <%= sevenDayForecast.current.sunset_time %></p>
                 </div>
               </div>
             </div>
@@ -72,68 +76,130 @@
         <div class="row row-cols-1 row-cols-md-3">
             <div class="col mb-4">
             <div class="card">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="http://openweathermap.org/img/wn/<%= sevenDayForecast.daily[0].weather[0].icon %>@2x.png" alt="weather icon"  width="75" height="75" class="mx-auto">
+                <h4 class="text-center"><strong><%= parseInt(sevenDayForecast.daily[0].temp.max) %>&deg/</strong><%= parseInt(sevenDayForecast.daily[0].temp.min) %>&deg</h4>
                 <div class="card-body bg-secondary text-light">
                 <h5 class="card-title text-center">Today</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
+                <p class="card-text text-center wc"><%= sevenDayForecast.daily[0].weather[0].main %></p>
+                <p class="card-text text-center wc2"><%= sevenDayForecast.daily[0].weather[0].description %></p>
+                <p class="card-text text-center wc">Wind Speed: <%= parseInt(sevenDayForecast.daily[0].wind_speed) %> MPH</p>
+                <p class="card-text text-center wc2">Wind Direction: <%= sevenDayForecast.daily[0].wind_deg %>&deg</p>
+                <p class="card-text text-center wc">Sunrise: <%= sevenDayForecast.daily[0].sunrise_time %></p>
+                <p class="card-text text-center wc">Sunset: <%= sevenDayForecast.daily[0].sunset_time %></p>
+              </div>
             </div>
             </div>
             <div class="col mb-4">
             <div class="card">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="http://openweathermap.org/img/wn/<%= sevenDayForecast.daily[1].weather[0].icon %>@2x.png" alt="weather icon"  width="75" height="75" class="mx-auto">
+                <h4 class="text-center"><strong><%= parseInt(sevenDayForecast.daily[1].temp.max) %>&deg/</strong><%= parseInt(sevenDayForecast.daily[1].temp.min) %>&deg</h4>
                 <div class="card-body bg-secondary text-light">
                 <h5 class="card-title text-center"><%= sevenDayForecast.daily[1].day %></h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text text-center wc"><%= sevenDayForecast.daily[1].weather[0].main %></p>
+                <p class="card-text text-center wc2"><%= sevenDayForecast.daily[1].weather[0].description %></p>
+                <p class="card-text text-center wc">Wind Speed: <%= parseInt(sevenDayForecast.daily[1].wind_speed) %> MPH</p>
+                <p class="card-text text-center wc2">Wind Direction: <%= sevenDayForecast.daily[1].wind_deg %>&deg</p>
+                <p class="card-text text-center wc">Sunrise: <%= sevenDayForecast.daily[1].sunrise_time %></p>
+                <p class="card-text text-center wc">Sunset: <%= sevenDayForecast.daily[1].sunset_time %></p>
                 </div>
             </div>
             </div>
             <div class="col mb-4">
             <div class="card">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="http://openweathermap.org/img/wn/<%= sevenDayForecast.daily[2].weather[0].icon %>@2x.png" alt="weather icon"  width="75" height="75" class="mx-auto">
+                <h4 class="text-center"><strong><%= parseInt(sevenDayForecast.daily[2].temp.max) %>&deg/</strong><%= parseInt(sevenDayForecast.daily[2].temp.min) %>&deg</h4>
                 <div class="card-body bg-secondary text-light">
                 <h5 class="card-title text-center"><%= sevenDayForecast.daily[2].day %></h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text text-center wc"><%= sevenDayForecast.daily[2].weather[0].main %></p>
+                <p class="card-text text-center wc2"><%= sevenDayForecast.daily[2].weather[0].description %></p>
+                <p class="card-text text-center wc">Wind Speed: <%= parseInt(sevenDayForecast.daily[2].wind_speed) %> MPH</p>
+                <p class="card-text text-center wc2">Wind Direction: <%= sevenDayForecast.daily[2].wind_deg %>&deg</p>
+                <p class="card-text text-center wc">Sunrise: <%= sevenDayForecast.daily[2].sunrise_time %></p>
+                <p class="card-text text-center wc">Sunset: <%= sevenDayForecast.daily[2].sunset_time %></p>
                 </div>
             </div>
             </div>
             <div class="col mb-4">
             <div class="card">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="http://openweathermap.org/img/wn/<%= sevenDayForecast.daily[3].weather[0].icon %>@2x.png" alt="weather icon"  width="75" height="75" class="mx-auto">
+                <h4 class="text-center"><strong><%= parseInt(sevenDayForecast.daily[3].temp.max) %>&deg/</strong><%= parseInt(sevenDayForecast.daily[3].temp.min) %>&deg</h4>
                 <div class="card-body bg-secondary text-light">
                 <h5 class="card-title text-center"><%= sevenDayForecast.daily[3].day %></h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text text-center wc"><%= sevenDayForecast.daily[3].weather[0].main %></p>
+                <p class="card-text text-center wc2"><%= sevenDayForecast.daily[3].weather[0].description %></p>
+                <p class="card-text text-center wc">Wind Speed: <%= parseInt(sevenDayForecast.daily[3].wind_speed) %> MPH</p>
+                <p class="card-text text-center wc2">Wind Direction: <%= sevenDayForecast.daily[3].wind_deg %>&deg</p>
+                <p class="card-text text-center wc">Sunrise: <%= sevenDayForecast.daily[3].sunrise_time %></p>
+                <p class="card-text text-center wc">Sunset: <%= sevenDayForecast.daily[3].sunset_time %></p>
                 </div>
             </div>
             </div>
             <div class="col mb-4">
                 <div class="card">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="http://openweathermap.org/img/wn/<%= sevenDayForecast.daily[4].weather[0].icon %>@2x.png" alt="weather icon"  width="75" height="75" class="mx-auto">
+                <h4 class="text-center"><strong><%= parseInt(sevenDayForecast.daily[4].temp.max) %>&deg/</strong><%= parseInt(sevenDayForecast.daily[4].temp.min) %>&deg</h4>
                 <div class="card-body bg-secondary text-light">
                     <h5 class="card-title text-center"><%= sevenDayForecast.daily[4].day %></h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text text-center wc"><%= sevenDayForecast.daily[4].weather[0].main %></p>
+                    <p class="card-text text-center wc2"><%= sevenDayForecast.daily[4].weather[0].description %></p>
+                    <p class="card-text text-center wc">Wind Speed: <%= parseInt(sevenDayForecast.daily[4].wind_speed) %> MPH</p>
+                    <p class="card-text text-center wc2">Wind Direction: <%= sevenDayForecast.daily[4].wind_deg %>&deg</p>
+                    <p class="card-text text-center wc">Sunrise: <%= sevenDayForecast.daily[4].sunrise_time %></p>
+                    <p class="card-text text-center wc">Sunset: <%= sevenDayForecast.daily[4].sunset_time %></p>
                 </div>
                 </div>
             </div>
             <div class="col mb-4">
                 <div class="card">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="http://openweathermap.org/img/wn/<%= sevenDayForecast.daily[5].weather[0].icon %>@2x.png" alt="weather icon"  width="75" height="75" class="mx-auto">
+                <h4 class="text-center"><strong><%= parseInt(sevenDayForecast.daily[5].temp.max) %>&deg/</strong><%= parseInt(sevenDayForecast.daily[5].temp.min) %>&deg</h4>
                 <div class="card-body bg-secondary text-light">
                     <h5 class="card-title text-center"><%= sevenDayForecast.daily[5].day %></h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text text-center wc"><%= sevenDayForecast.daily[5].weather[0].main %></p>
+                    <p class="card-text text-center wc2"><%= sevenDayForecast.daily[5].weather[0].description %></p>
+                    <p class="card-text text-center wc">Wind Speed: <%= parseInt(sevenDayForecast.daily[0].wind_speed) %> MPH</p>
+                    <p class="card-text text-center wc2">Wind Direction: <%= sevenDayForecast.daily[5].wind_deg %>&deg</p>
+                    <p class="card-text text-center wc">Sunrise: <%= sevenDayForecast.daily[5].sunrise_time %></p>
+                    <p class="card-text text-center wc">Sunset: <%= sevenDayForecast.daily[5].sunset_time %></p>
                 </div>
                 </div>
             </div>
             <div class="col mb-4 mx-auto">
                 <div class="card">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="http://openweathermap.org/img/wn/<%= sevenDayForecast.daily[6].weather[0].icon %>@2x.png" alt="weather icon"  width="75" height="75" class="mx-auto">
+                <h4 class="text-center"><strong><%= parseInt(sevenDayForecast.daily[6].temp.max) %>&deg/</strong><%= parseInt(sevenDayForecast.daily[6].temp.min) %>&deg</h4>
                 <div class="card-body bg-secondary text-light">
                     <h5 class="card-title text-center"><%= sevenDayForecast.daily[6].day %></h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text text-center wc"><%= sevenDayForecast.daily[6].weather[0].main %></p>
+                    <p class="card-text text-center wc2"><%= sevenDayForecast.daily[6].weather[0].description %></p>
+                    <p class="card-text text-center wc">Wind Speed: <%= parseInt(sevenDayForecast.daily[6].wind_speed) %> MPH</p>
+                    <p class="card-text text-center wc2">Wind Direction: <%= sevenDayForecast.daily[6].wind_deg %>&deg</p>
+                    <p class="card-text text-center wc">Sunrise: <%= sevenDayForecast.daily[6].sunrise_time %></p>
+                    <p class="card-text text-center wc">Sunset: <%= sevenDayForecast.daily[6].sunset_time %></p>
                 </div>
                 </div>
+              </div>
+                <div class="col mb-4 mx-auto">
+                  <div class="card">
+                  <img src="http://openweathermap.org/img/wn/<%= sevenDayForecast.daily[7].weather[0].icon %>@2x.png" alt="weather icon"  width="75" height="75" class="mx-auto">
+                  <h4 class="text-center"><strong><%= parseInt(sevenDayForecast.daily[7].temp.max) %>&deg/</strong><%= parseInt(sevenDayForecast.daily[6].temp.min) %>&deg</h4>
+                  <div class="card-body bg-secondary text-light">
+                      <h5 class="card-title text-center"><%= sevenDayForecast.daily[7].day %></h5>
+                      <p class="card-text text-center wc"><%= sevenDayForecast.daily[7].weather[0].main %></p>
+                      <p class="card-text text-center wc2"><%= sevenDayForecast.daily[7].weather[0].description %></p>
+                      <p class="card-text text-center wc">Wind Speed: <%= parseInt(sevenDayForecast.daily[7].wind_speed) %> MPH</p>
+                      <p class="card-text text-center wc2">Wind Direction: <%= sevenDayForecast.daily[7].wind_deg %>&deg</p>
+                      <p class="card-text text-center wc">Sunrise: <%= sevenDayForecast.daily[7].sunrise_time %></p>
+                      <p class="card-text text-center wc">Sunset: <%= sevenDayForecast.daily[7].sunset_time %></p>
+                  </div>
+                  </div>
             </div>
         </div>
     </div>
-
-    <%- include('includes/footer') %>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
