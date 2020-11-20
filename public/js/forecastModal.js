@@ -8,6 +8,7 @@ function validateForecastZip() {
       document.getElementById("fzip").value = ""
     } 
   }
+  
 
 document.getElementById("getForeCast").onclick = function () {
     validateForecastZip()
@@ -23,9 +24,11 @@ document.getElementById("fzip").addEventListener("keydown", function(e) {
     if (e.key === 'Enter') {
         validateForecastZip()
         forecastZip = document.getElementById("fzip").value
+        e.preventDefault()
         fhtml = `weatherForecast/${forecastZip}`
         if(forecastZip != ""){
-            href=`"${fhtml}"`
+            href=`${fhtml}`
+            document.getElementById("getForeCast").click()
         }
     }
 })
