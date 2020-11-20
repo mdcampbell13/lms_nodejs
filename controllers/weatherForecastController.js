@@ -61,26 +61,17 @@ function currentSunset() {
     sevenDayForecast.current.sunset_time = dateObject4.toLocaleTimeString('en-US')
 }
 
-/*fForecast = async function() {
-    await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${weatherZipInfo.lat}&lon=${weatherZipInfo.lng}&exclude=minutely,hourly,alert&appid=${process.env.OPENWEATHERAPIKEY}`)
-    .then(res => res.json())
-    .then(data3 => weatherForecast(data3))
-    .then (console.log(sevenDayForecast))
-    .catch(error => new Error(error))
-
-}*/
 
 exports.viewWeatherForecastScreen = async function(req, res) {
-      /* await fetch(`https://www.zipcodeapi.com/rest/${process.env.ZIPCODEAPIKEY}/info.json/${req.params.id}/degrees`)
+         await fetch(`https://www.zipcodeapi.com/rest/${process.env.ZIPCODEAPIKEY}/info.json/${req.params.id}/degrees`)
         .then(res => res.json())
         .then(data2 => zipCodeLocation(data2))
-        .catch(error => new Error(error)) */
-        await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=38.15&lon=-85.78&units=imperial&exclude=minutely,hourly,alert&appid=${process.env.OPENWEATHERAPIKEY}`)
+        .catch(error => new Error(error))
+        await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${weatherZipInfo.lat}&lon=${weatherZipInfo.lng}&units=imperial&exclude=minutely,hourly,alert&appid=${process.env.OPENWEATHERAPIKEY}`)
         .then(res => res.json())
         .then(data3 => weatherForecast(data3))
         .then (console.log(sevenDayForecast))
         .catch(error => new Error(error))
-        /*fForecast()*/
         days()
         sunrise()
         sunset()

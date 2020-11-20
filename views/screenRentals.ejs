@@ -211,8 +211,16 @@
         </div>
         
                 <hr class="my-4">
-            <!-- Movie Roulette Card-->    
-            <div class="d-flex justify-content-center">
+                <div class="card-deck">
+            <!-- Forecast Card--> 
+              <div class="card text-center" id="forecastCard">
+                <div class="card-body bg-secondary text-light">
+                  <h5 class="card-title">7 Day Forecast</h5>
+                  <p class="card-text">Get the Seven Day forecast for your event.</p>
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#forecastModal" id="forecastButton">Get Forecast</button>
+                </div>
+              </div>
+            <!-- Movie Roulette Card--> 
             <div class="card text-center" id="movRouletteCard">
               <div class="card-body bg-secondary text-light">
                 <h5 class="card-title">Movie Roulette</h5>
@@ -221,6 +229,7 @@
               </div>
             </div>
           </div>
+        </div>  
         <hr class="my-4">
           <p class="text-light text-center">We have numerous payment options available through PayPal. We will provide a payment link in your return email after your reservation is finalized. We can also accept traditional forms of payment such as check, cash, or money order.</p>
           <img src="cc-badges.png" alt="PayPal" class="rounded mx-auto d-block"/>
@@ -228,6 +237,7 @@
       </div>
       <%- include('includes/footer') %>
       <%- include('includes/movieRouletteModal') %>
+      <%- include('includes/forecastModal') %>
       <%- include('includes/addOnOrderModal') %>
       <%- include('includes/screenOrderModal') %>
       <%- include('includes/serviceOrderModal') %>
