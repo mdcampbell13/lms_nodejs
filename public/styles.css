@@ -87,6 +87,10 @@ cursor: pointer;
   width: 16rem;
 }
 
+#rouletteSpinSameButton {
+  width: 16rem;
+}
+
 #roulettePackageReturn {
   width: 16rem;
 }
