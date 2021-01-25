@@ -57,11 +57,20 @@ router.get('/screenFailure', screenFailureController.viewScreenFailureScreen)
 // service order route
 router.get('/serviceOrder/:id', presentationController.viewserviceOrderScreen)
 
-// screen reserve fail route
+// service order delete route
+router.post('/serviceOrder/:id/delete', presentationController.viewserviceOrderDeleteScreen)
+
+// screen order route
 router.get('/screenRentalOrder/:id', screenRentalsController.viewscreenRentalOrderScreen)
 
-// screen reserve fail route
+//screen order delete route
+router.post('/screenRentalOrder/:id/delete', screenRentalsController.viewscreenRentalOrderDeleteScreen)
+
+// screen add on order route
 router.get('/addOnsOrder/:id', packageAddOnsController.viewaddOnsOrderScreen)
+
+//screen add on order delete route
+router.post('/addOnsOrder/:id/delete', packageAddOnsController.viewaddOnsOrderDeleteScreen)
 
 // order fail route
 router.get('/orderErrorScreen', orderErrorController.vieworderErrorScreen)

@@ -28,4 +28,20 @@ ScreenPackReservation.findScreenPackOrderById = function(id) {
     })
 }
 
+// delete screen pack order
+ScreenPackReservation.delete = function(id) {
+    return new Promise(async function(resolve, reject) {
+        if (typeof(id) !="string" || !ObjectID.isValid(id)) {
+            reject()
+            return
+        }
+        let screenPackReservation = await screenPackReservationsCollections.deleteOne({_id: new ObjectID(id)})
+        if (screenPackReservation) {
+            resolve(screenPackReservation)
+        } else {
+            reject()
+        }
+    })
+}
+
 module.exports = ScreenPackReservation

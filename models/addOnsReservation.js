@@ -28,4 +28,20 @@ PAddOnsReservation.findAddOnOrderById = function(id) {
     })
 }
 
+// delete service order
+PAddOnsReservation.delete = function(id) {
+    return new Promise(async function(resolve, reject) {
+        if (typeof(id) !="string" || !ObjectID.isValid(id)) {
+            reject()
+            return
+        }
+        let pAddOnsReservation = await addOnReservationsCollections.deleteOne({_id: new ObjectID(id)})
+        if (pAddOnsReservation) {
+            resolve(pAddOnsReservation)
+        } else {
+            reject()
+        }
+    })
+}
+
 module.exports = PAddOnsReservation

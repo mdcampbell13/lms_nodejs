@@ -27,4 +27,20 @@ ServicesReservation.findServiceOrderById = function(id) {
     })
 }
 
+// delete service order
+ServicesReservation.delete = function(id) {
+    return new Promise(async function(resolve, reject) {
+        if (typeof(id) !="string" || !ObjectID.isValid(id)) {
+            reject()
+            return
+        }
+        let servicesReservation = await servicesReservationsCollections.deleteOne({_id: new ObjectID(id)})
+        if (servicesReservation) {
+            resolve(servicesReservation)
+        } else {
+            reject()
+        }
+    })
+}
+
 module.exports = ServicesReservation

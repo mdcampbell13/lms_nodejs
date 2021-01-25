@@ -44,3 +44,12 @@ exports.viewaddOnsOrderScreen = async function(req, res) {
         res.render('orderErrorScreen')
     }
 }
+
+exports.viewaddOnsOrderDeleteScreen = async function(req, res) {
+    try {
+        await AddOnsReservation.delete(req.params.id)
+        res.render('orderDeleteSuccessScreen')
+    } catch {
+        res.render('deleteFailureScreen')
+    }
+}

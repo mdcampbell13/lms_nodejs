@@ -39,3 +39,12 @@ exports.viewscreenRentalOrderScreen = async function(req, res) {
         res.render('orderErrorScreen')
     }
 }
+
+exports.viewscreenRentalOrderDeleteScreen = async function(req, res) {
+    try {
+        await ScreenPackReservation.delete(req.params.id)
+        res.render('orderDeleteSuccessScreen')
+    } catch {
+        res.render('deleteFailureScreen')
+    }
+}

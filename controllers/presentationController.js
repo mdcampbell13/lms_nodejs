@@ -39,3 +39,12 @@ exports.viewserviceOrderScreen = async function(req, res) {
         res.render('orderErrorScreen')
     }
 }
+
+exports.viewserviceOrderDeleteScreen = async function(req, res) {
+    try {
+        await ServicesReservation.delete(req.params.id)
+        res.render('orderDeleteSuccessScreen')
+    } catch {
+        res.render('deleteFailureScreen')
+    }
+}
