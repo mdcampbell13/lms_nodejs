@@ -1,5 +1,7 @@
 const addOnReservationsCollections = require ('../db').db().collection("addOnReservations")
 const ObjectID = require('mongodb').ObjectID
+const sendgrid = require('@sendgrid/mail')
+sendgrid.setApiKey(process.env.SENDGRIDAPIKEY)
 
 let PAddOnsReservation = function (adata) {
     this.adata = adata
@@ -30,6 +32,13 @@ PAddOnsReservation.findAddOnOrderById = function(id) {
 
 // delete service order
 PAddOnsReservation.delete = function(id) {
+    sendgrid.send({
+        to: 'mike.campbell1967@gmail.com',
+        from: 'test@test.com',
+        subject: `Package Add-on Services Reservation ${id} Cancelled`,
+        text: `Package add-on services order number ${id} has been cancelled by the customer.`,
+        html: `Package add-on services order number ${id} has been cancelled by the customer.`
+    })
     return new Promise(async function(resolve, reject) {
         if (typeof(id) !="string" || !ObjectID.isValid(id)) {
             reject()

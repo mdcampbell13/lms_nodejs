@@ -1,5 +1,7 @@
 const screenPackReservationsCollections = require ('../db').db().collection("screenReservations")
 const ObjectID = require('mongodb').ObjectID
+const sendgrid = require('@sendgrid/mail')
+sendgrid.setApiKey(process.env.SENDGRIDAPIKEY)
 
 let ScreenPackReservation = function (scrdata) {
     this.scrdata = scrdata
@@ -30,6 +32,13 @@ ScreenPackReservation.findScreenPackOrderById = function(id) {
 
 // delete screen pack order
 ScreenPackReservation.delete = function(id) {
+    sendgrid.send({
+        to: 'mike.campbell1967@gmail.com',
+        from: 'test@test.com',
+        subject: `Screen Package Reservation ${id} Cancelled`,
+        text: `Screen package order number ${id} has been cancelled by the customer.`,
+        html: `Screen package order number ${id} has been cancelled by the customer.`
+    })
     return new Promise(async function(resolve, reject) {
         if (typeof(id) !="string" || !ObjectID.isValid(id)) {
             reject()
