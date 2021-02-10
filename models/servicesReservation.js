@@ -31,13 +31,6 @@ ServicesReservation.findServiceOrderById = function(id) {
 
 // delete service order
 ServicesReservation.delete = function(id) {
-    sendgrid.send({
-        to: 'mike.campbell1967@gmail.com',
-        from: 'test@test.com',
-        subject: `Presentation Services Reservation ${id} Cancelled`,
-        text: `Presentation services order number ${id} has been cancelled by the customer.`,
-        html: `Presentation services order number ${id} has been cancelled by the customer.`
-    })
     return new Promise(async function(resolve, reject) {
         if (typeof(id) !="string" || !ObjectID.isValid(id)) {
             reject()
@@ -46,6 +39,13 @@ ServicesReservation.delete = function(id) {
         let servicesReservation = await servicesReservationsCollections.deleteOne({_id: new ObjectID(id)})
         if (servicesReservation) {
             resolve(servicesReservation)
+            sendgrid.send({
+                to: 'mike.campbell1967@gmail.com',
+                from: 'test@test.com',
+                subject: `Presentation Services Reservation ${id} Cancelled`,
+                text: `Presentation services order number ${id} has been cancelled by the customer.`,
+                html: `Presentation services order number ${id} has been cancelled by the customer.`
+            })
         } else {
             reject()
         }

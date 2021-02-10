@@ -32,13 +32,6 @@ ScreenPackReservation.findScreenPackOrderById = function(id) {
 
 // delete screen pack order
 ScreenPackReservation.delete = function(id) {
-    sendgrid.send({
-        to: 'mike.campbell1967@gmail.com',
-        from: 'test@test.com',
-        subject: `Screen Package Reservation ${id} Cancelled`,
-        text: `Screen package order number ${id} has been cancelled by the customer.`,
-        html: `Screen package order number ${id} has been cancelled by the customer.`
-    })
     return new Promise(async function(resolve, reject) {
         if (typeof(id) !="string" || !ObjectID.isValid(id)) {
             reject()
@@ -47,6 +40,13 @@ ScreenPackReservation.delete = function(id) {
         let screenPackReservation = await screenPackReservationsCollections.deleteOne({_id: new ObjectID(id)})
         if (screenPackReservation) {
             resolve(screenPackReservation)
+            sendgrid.send({
+                to: 'mike.campbell1967@gmail.com',
+                from: 'test@test.com',
+                subject: `Screen Package Reservation ${id} Cancelled`,
+                text: `Screen package order number ${id} has been cancelled by the customer.`,
+                html: `Screen package order number ${id} has been cancelled by the customer.`
+            })
         } else {
             reject()
         }
