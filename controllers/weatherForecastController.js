@@ -63,6 +63,7 @@ function currentSunset() {
 
 
 exports.viewWeatherForecastScreen = async function(req, res) {
+        try {
         await fetch(`https://www.zipcodeapi.com/rest/${process.env.ZIPCODEAPIKEY}/info.json/${req.params.id}/degrees`)
         .then(res => res.json())
         .then(data2 => zipCodeLocation(data2))
@@ -77,4 +78,5 @@ exports.viewWeatherForecastScreen = async function(req, res) {
         currentSunrise()
         currentSunset()
         res.render('weatherForecast', {sevenDayForecast, weatherZipInfo})
+    } catch (e) {}
 }
